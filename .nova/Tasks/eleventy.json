@@ -13,5 +13,8 @@
       "script" : "npm install && npm run dev"
     }
   },
+  "environment" : {
+    "ELEVENTY_ENV" : "development"
+  },
   "openLogOnRun" : "start"
 }

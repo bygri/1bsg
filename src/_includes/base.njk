@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="{{ '/assets/css/core.css' | url }}">
     <title>{{ title }} | 1st Blackheath Scout Group</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      var _paq = window._paq = window._paq || [];
+      {% if env.environment != "development" %}
+      _paq.push(['setSecureCookie', true]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u='https://matomo.tobygriffin.dev/';
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '5']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+      {% endif %}
+    </script>
   </head>
 
   <body>
