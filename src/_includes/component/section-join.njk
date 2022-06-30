@@ -1,10 +1,10 @@
 <section id="join" class="container mx-auto px-4 sm:px-12 py-24 space-y-8">
   <header class="md:flex md:items-center md:justify-between mb-6">
     <div class="flex-1 min-w-0">
-      <h1 class="text-5xl font-black tracking-tight">Join 1st Blackheath Scouts</h1>
+      <h1 class="text-5xl font-black tracking-tight">Join 1st&nbsp;Blackheath Scouts</h1>
     </div>
     <div class="mt-4 flex md:mt-0 md:ml-4">
-      <a href="{{ urls.enquiry_url }}" class="inline-flex items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white bg-scarf-blue hover:bg-scarf-red transition duration-150">Enquire Now</a>
+      <a href="{{ urls.enquiry_url }}" class="inline-flex items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Enquire Now</a>
     </div>
   </header>
 
@@ -17,7 +17,7 @@
     <p>
       We'd love to welcome your child at the Scout Hall for a free 3 week trial, to see what
       Scouting is all about and to meet the kids and Leaders at 1st Blackheath.
-      Please <a class="font-bold text-scarf-blue hover:text-scarf-red underline" href="{{ urls.enquiry_url }}">submit an enquiry</a>
+      Please <a class="font-bold text-scarf-blue hover:text-scarf-red dark:text-scarf-blue-light underline" href="{{ urls.enquiry_url }}">submit an enquiry</a>
       to book in your trial.
     </p>
   </div>
@@ -25,16 +25,17 @@
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
   {% for section in sections %}
     <div class="text-center">
-      <header class="h-36">
-        <img class="block mx-auto h-full" src="{{ section.img }}" alt="{{ section.name }}">
+      <header class="h-36 mb-2">
+        <img class="block dark:hidden mx-auto h-full" src="/assets/img/section-{{ section.img }}-220.png" alt="{{ section.name }}">
+        <img class="hidden dark:block mx-auto h-full brightness-90" src="/assets/img/section-{{ section.img }}-invert-220.png" alt="{{ section.name }}">
       </header>
-        <p>{{ section.ages }}</p>
-      <hr class="my-4">
-      <h3 class="font-bold text-scarf-blue">Meets on</h3>
+      <p>{{ section.ages }}</p>
+      <hr class="my-4 dark:border-stone-600">
+      <h3 class="font-bold text-scarf-blue dark:text-scarf-blue-light">Meets on</h3>
       <p>{{ section.day }}</p>
       <p>{{ section.time }}</p>
-      <hr class="my-4">
-      <h3 class="font-bold text-scarf-blue">Leaders</h3>
+      <hr class="my-4 dark:border-stone-600">
+      <h3 class="font-bold text-scarf-blue dark:text-scarf-blue-light">Leaders</h3>
       {% for leader in section.leaders %}
       <p>{{ leader }}</p>
       {% endfor %}
@@ -46,12 +47,12 @@
     <h3 class="font-bold">Fees</h3>
     <p>
       There is a joining fee of $115, plus an annual fee of $470 ($390 for Joeys) which can be paid quarterly.
-      Scouts NSW accepts Active Kids Vouchers, and <a class="font-bold text-scarf-blue hover:text-scarf-red underline" href="https://nsw.scouts.com.au/familysupportfund/">assistance is available</a> for families facing financial challenges.
+      Scouts NSW accepts Active Kids Vouchers, and <a class="font-bold text-scarf-blue hover:text-scarf-red dark:text-scarf-blue-light underline" href="https://nsw.scouts.com.au/familysupportfund/" target="_blank">assistance is available</a> for families facing financial challenges.
     </p>
   </div>
 
-  <aside class="bg-scarf-blue text-white rounded-xl shadow-xl px-6 py-4 -mx-6 flex flex-col md:flex-row items-center">
-    <img class="h-24 mr-6" src="/assets/img/scouts-white-256.png">
+  <aside class="bg-scarf-blue dark:bg-slate-800 text-white dark:text-stone-200 rounded-xl shadow-xl px-6 py-4 -mx-6 flex flex-col md:flex-row items-center">
+    <img class="h-24 mr-6 dark:brightness-90" src="/assets/img/scouts-white-256.png">
     <div class="space-y-4">
       <h2 class="font-bold text-2xl">Adult Volunteering</h2>
       <p>
@@ -62,7 +63,7 @@
       <p>
         <span class="font-bold">Group Leader</span> Bagheera (Toby)
       </p>
-      <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded border border-white transition duration-150 hover:bg-white hover:text-scarf-red">Get in touch</a>
+      <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Get in touch</a>
     </div>
   </aside>
 

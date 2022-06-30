@@ -1,8 +1,8 @@
-<footer class="space-y-6 pt-12 pb-8 bg-stone-100">
+<footer class="space-y-6 pt-12 pb-8 bg-stone-100 dark:bg-stone-900">
   <div class="container mx-auto px-4 sm:px-12">
     <ol class="flex flex-col sm:flex-row items-center justify-center flex-wrap">
       {% for unit in organisation %}
-      <li class="flex items-center text-stone-600">
+      <li class="flex items-center text-stone-600 dark:text-stone-400">
         {% if not loop.first %}
         <svg class="flex-shrink-0 h-5 w-5 text-stone-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -10,7 +10,7 @@
         {% endif %}
 
         {% if unit.url %}
-        <a class="hover:text-scarf-red underline" href="{{ unit.url }}">{{ unit.name }}</a>
+        <a class="hover:text-scarf-red underline" href="{{ unit.url }}" target="_blank">{{ unit.name }}</a>
         {% else %}
         {{ unit.name }}
         {% endif %}
@@ -21,13 +21,13 @@
 
   <div class="flex justify-center space-x-2">
     <img class="h-16" src="/assets/img/badge-256.png">
-    <a href="https://www.scout.org">
+    <a href="https://www.scout.org" target="_blank">
       <img class="h-16" src="/assets/img/world-scout-emblem-128.png">
     </a>
   </div>
 
   <div class="container mx-auto px-4 sm:px-12">
-    <ul class="text-stone-600 text-center">
+    <ul class="text-stone-600 dark:text-stone-400 text-center">
       <li>This work is marked with <a class="hover:text-scarf-red underline" href="http://creativecommons.org/publicdomain/zero/1.0" target="_blank" rel="license noopener noreferrer">CC0 1.0</a>.</li>
       <li>Last updated {{ page.date|shortDate }}.</li>
       <li>Source on <a class="hover:text-scarf-red underline" href="https://github.com/bygri/1bsg/" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
@@ -35,7 +35,7 @@
   </div>
 </footer>
 
-<svg class="block w-full h-10 bg-scarf-blue text-scarf-red stroke-scarf-red">
+<svg class="block w-full h-10 bg-scarf-blue stroke-scarf-red dark:bg-scarf-blue-dark dark:stroke-scarf-red-dark">
   <defs>
     <pattern id="stripe" width="50" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
       <line x1="0" y1="0" x2="0" y2="10" style="stroke-width:40" />

@@ -13,10 +13,15 @@ module.exports = {
     extend: {
       colors: {
         scarf: {
-          //blue: '#3D428B',
-          // red: '#AF1919'
-          blue: '#204798',
-          red: '#AF1919'
+          blue: {
+            light: '#2553B3',
+            DEFAULT: '#204798',
+            dark: '#1A3B7F'
+          },
+          red: {
+            DEFAULT: '#AF1919',
+            dark: '#8A1113'
+          }
         }
 
       }

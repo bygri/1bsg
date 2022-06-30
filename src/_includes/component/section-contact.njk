@@ -7,15 +7,15 @@
     {% for contact in contacts %}
     <div>
       <p class="font-bold">{{ contact.name }}</p>
-      <p class="text-stone-600">{{ contact.position }}</p>
-      {% if contact.email %}<p><a class="font-bold text-scarf-blue hover:text-scarf-red underline" href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>{% endif %}
+      <p class="text-stone-600 dark:text-stone-400">{{ contact.position }}</p>
+      {% if contact.email %}<p><a class="font-bold text-scarf-blue dark:text-scarf-blue-light hover:text-scarf-red underline" href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>{% endif %}
     </div>
     {% endfor %}
   </div>
 
   <div class="grid md:grid-cols-3 gap-6 md:gap-12">
     <div>
-      <h2 class="mb-3 text-3xl font-black tracking-tight">Location</h2>
+      <h2 class="mb-3 text-3xl font-black tracking-tight">Scout Hall</h2>
       <p>2 Park Lane</p>
       <p>Blackheath NSW 2785</p>
     </div>
