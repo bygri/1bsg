@@ -1,0 +1,36 @@
+- name: Joeys
+  img: /assets/img/section-joeys-220.png
+  ages: 5–8 years
+  day: Wednesday
+  time: 5:00pm–6:00pm
+  leaders:
+    - Taz (Sharon)
+    - Chip (James)
+
+- name: Cubs
+  img: /assets/img/section-cubs-220.png
+  ages: 8–11 years
+  day: Tuesday
+  time: 6:00pm–7:30pm
+  leaders:
+    - Rama (Andrew)
+    - Rikki (Michael)
+    - Raksha (Tiffany)
+
+- name: Scouts
+  img: /assets/img/section-scouts-220.png
+  ages: 11–14 years
+  day: Thursday
+  time: 6:30pm–8:30pm
+  leaders:
+    - Chip (James)
+    - Romana (Krystelle)
+    - Doc (Ethan)
+
+- name: Venturers
+  img: /assets/img/section-venturers-220.png
+  ages: 14–18 years
+  day: Monday
+  time: 7:30pm–9:30pm
+  leaders:
+    - Taz (Sharon)

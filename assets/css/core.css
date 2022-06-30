@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+
+@tailwind base;
+
+body {
+  @apply font-body;
+}
+
+@tailwind components;
+
+@tailwind utilities;
