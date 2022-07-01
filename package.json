@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@tailwindcss/typography": "^0.5.2",
     "concurrently": "^7.0.0",
     "js-yaml": "^4.1.0",
     "luxon": "^2.3.0",
