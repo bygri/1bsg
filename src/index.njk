@@ -1,6 +1,5 @@
 ---
 layout: base
-title: Home
 date: Last Modified
 ---
 
@@ -17,29 +16,28 @@ date: Last Modified
     <div class="not-prose mb-8">
       <a href="{{ urls.enquiry_url }}" class="inline-flex items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Enquire Now</a>
     </div>
-    {% markdown %}{% include "content/join-header.md" %}{% endmarkdown %}
+    {% markdown %}{% include "content/index-join-header.md" %}{% endmarkdown %}
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-  {% for section in sections %}
-    <div class="text-center leading-7">
-      <header class="h-36 mb-4">
-        <img class="block dark:hidden mx-auto h-full" src="/assets/img/section-{{ section.img }}-220.png" alt="{{ section.name }}">
-        <img class="hidden dark:block mx-auto h-full brightness-90" src="/assets/img/section-{{ section.img }}-invert-220.png" alt="{{ section.name }}">
-      </header>
-      <h3 class="font-bold text-scarf-blue dark:text-scarf-blue-light">Ages</h3>
-      <p>{{ section.ages }}</p>
-      <hr class="my-4 dark:border-stone-600">
-      <h3 class="font-bold text-scarf-blue dark:text-scarf-blue-light">Meets on</h3>
-      <p>{{ section.day }}</p>
-      <p>{{ section.time }}</p>
-      <hr class="my-4 dark:border-stone-600">
-      <h3 class="font-bold text-scarf-blue dark:text-scarf-blue-light">Leaders</h3>
-      {% for leader in section.leaders %}
-      <p>{{ leader }}</p>
-      {% endfor %}
+  <div class="bg-stone-50 dark:bg-stone-900 rounded-lg shadow p-2">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+    {% for section in sections %}
+      <div class="text-center leading-7 px-2 py-4">
+        <header class="h-36">
+          <img class="block dark:hidden mx-auto h-full" src="/assets/img/section-{{ section.img }}-220.png" alt="{{ section.name }}">
+          <img class="hidden dark:block mx-auto h-full brightness-90" src="/assets/img/section-{{ section.img }}-invert-220.png" alt="{{ section.name }}">
+        </header>
+        <p class="">{{ section.ages }}</p>
+        <h3 class="mt-4 font-bold text-scarf-red">Meets</h3>
+        <p>{{ section.day }}</p>
+        <p>{{ section.time }}</p>
+        <h3 class="mt-4 font-bold text-scarf-red">Leaders</h3>
+        {% for leader in section.leaders %}
+        <p>{{ leader }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
     </div>
-  {% endfor %}
   </div>
 
   <div class="mx-auto prose prose-lg prose-stone dark:prose-invert
@@ -47,56 +45,47 @@ date: Last Modified
               prose-h2:font-black prose-h2:text-3xl
               prose-strong:font-bold
               prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-    {% markdown %}{% include "content/join-footer.md" %}{% endmarkdown %}
+    {% markdown %}{% include "content/index-join-footer.md" %}{% endmarkdown %}
   </div>
 </section>
 
 
-<section id="volunteer" class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
-  <div class="bg-scarf-blue dark:bg-slate-800 rounded-xl shadow-xl px-6 py-8 -mx-6 flex flex-col md:flex-row items-center justify-center">
-    <img class="h-36 mr-6 mb-6 dark:brightness-90" src="/assets/img/scouts-white-256.png">
-    <div class="prose prose-invert
-                prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-                prose-h2:font-black prose-h2:text-3xl
-                prose-strong:font-bold
-                prose-p:text-stone-100 dark:prose-p:text-stone-200
-                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-      {% markdown %}{% include "content/adult-volunteering.md" %}{% endmarkdown %}
-      <div class="not-prose">
-        <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Group Leader</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="hallhire" class="bg-lime-900 dark:bg-stone-900 pt-24">
+<section id="volunteer" class="bg-scarf-blue dark:bg-slate-800 py-24 mb-24">
   <div class="container mx-auto px-4 sm:px-12">
-    <div class="grid md:grid-cols-2 gap-6">
-      <img class="block" src="/assets/img/hall.jpg">
+    <div class="flex flex-col md:flex-row items-center justify-center">
+      <img class="h-36 mr-6 mb-6 dark:brightness-90" src="/assets/img/scouts-white-256.png">
       <div class="prose prose-invert
                   prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
                   prose-h2:font-black prose-h2:text-3xl
                   prose-strong:font-bold
                   prose-p:text-stone-100 dark:prose-p:text-stone-200
                   prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-        {% markdown %}{% include "content/hallhire.md" %}{% endmarkdown %}
+        {% markdown %}{% include "content/index-adult-volunteering.md" %}{% endmarkdown %}
         <div class="not-prose">
-          <a href="{{ urls.hall_hire_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Hall Booking Officer</a>
+          <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Group Leader</a>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="container mx-auto px-4 sm:px-12 mt-12">
-    <h2 class="text-3xl font-black text-stone-100 dark:text-stone-200 mb-3">Upcoming Bookings</h2>
-    <p class="text-stone-100 dark:text-stone-200">
-      Review the calendar below to see when our Hall is available for hire. For easier viewing, you can
-      <a class="font-bold underline" href="https://outlook.office365.com/owa/calendar/fa7d7c8a13b74904a0593f09e3702b30@nsw.scouts.com.au/b115c84b7dec4ee786ae6e0a94991f812912002311597805349/calendar.html" target="_blank">open the calendar in a new window</a>.
-    </p>
-  </div>
-  <div class="p-4 max-w-[80rem] mx-auto">
-    <iframe class="rounded-lg w-full h-[38rem]" src="https://outlook.office365.com/owa/calendar/fa7d7c8a13b74904a0593f09e3702b30@nsw.scouts.com.au/b115c84b7dec4ee786ae6e0a94991f812912002311597805349/calendar.html"></iframe>
+
+<section id="hallhire" class="bg-lime-800 dark:bg-stone-900 py-24">
+  <div class="container mx-auto px-4 sm:px-12">
+    <div class="grid md:grid-cols-2 gap-6">
+      <img class="block rounded shadow" src="/assets/img/hall.jpg">
+      <div class="prose prose-invert
+                  prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
+                  prose-h2:font-black prose-h2:text-3xl
+                  prose-strong:font-bold
+                  prose-p:text-stone-100 dark:prose-p:text-stone-200
+                  prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+        {% markdown %}{% include "content/index-hallhire.md" %}{% endmarkdown %}
+        <div class="not-prose">
+          <a href="/hall-hire" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Find out more</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

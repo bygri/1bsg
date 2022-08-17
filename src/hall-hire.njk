@@ -1,0 +1,59 @@
+---
+layout: base
+title: Hall Hire
+date: Last Modified
+---
+
+{% include "component/header-menu.njk" %}
+
+
+<section class="bg-lime-800 dark:bg-stone-900 py-24">
+  <div class="container mx-auto px-4 sm:px-12">
+    <div class="mx-auto prose prose-lg prose-invert
+                prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
+                prose-h2:font-black prose-h2:text-3xl
+                prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "content/hallhire.md" %}{% endmarkdown %}
+      <div class="not-prose">
+        <a href="{{ urls.hall_hire_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Hall Booking Officer</a>
+      </div>
+    </div>
+
+    <img class="block w-full mt-24" src="/assets/img/hall.jpg">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <img class="block w-full" src="/assets/img/hall-02.jpg">
+      <img class="block w-full" src="/assets/img/hall-03.jpg">
+      <img class="block w-full" src="/assets/img/hall-04.jpg">
+      <img class="block w-full" src="/assets/img/hall-05.jpg">
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="py-24">
+  <div class="container mx-auto px-4 sm:px-12 mb-12">
+    <div class="mx-auto prose prose-stone dark:prose-invert
+      prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
+      prose-h2:font-black prose-h2:text-3xl
+      prose-strong:font-bold
+      prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      <h2>Upcoming Bookings</h2>
+      <p>
+        Review the calendar below to see when our Hall is available for hire. For easier viewing, you can
+        <a href="https://outlook.office365.com/owa/calendar/fa7d7c8a13b74904a0593f09e3702b30@nsw.scouts.com.au/b115c84b7dec4ee786ae6e0a94991f812912002311597805349/calendar.html" target="_blank">open the calendar in a new window</a>.
+      </p>
+      <div class="not-prose">
+        <a href="{{ urls.hall_hire_url }}" class="inline-flex items-center px-3 py-1 rounded shadow font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Make a booking inquiry</a>
+      </div>
+    </div>
+  </div>
+  <div class="p-4 max-w-[80rem] mx-auto">
+    <iframe class="rounded-lg w-full h-[38rem]" src="https://outlook.office365.com/owa/calendar/fa7d7c8a13b74904a0593f09e3702b30@nsw.scouts.com.au/b115c84b7dec4ee786ae6e0a94991f812912002311597805349/calendar.html"></iframe>
+  </div>
+</section>
+
+{% include "component/footer.njk" %}

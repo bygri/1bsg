@@ -1,9 +1,9 @@
 - title: Join
-  href: "#join"
+  href: "/#join"
 - title: Hall Hire
-  href: "#hallhire"
+  href: /hall-hire
 - title: Contact
-  href: "#contact"
+  href: "/#contact"
 - title: Facebook
   href: https://www.facebook.com/1stBlackheathScoutGroup/
   external: true
