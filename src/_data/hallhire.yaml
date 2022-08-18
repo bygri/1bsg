@@ -1,0 +1,26 @@
+hero_photo:
+  url: /assets/img/hall-hero.jpg
+  alt: Interior of the Hall
+  caption: The 84sqm main floor area with slow combustion heater
+
+photos:
+  - url: /assets/img/hall-02.jpg
+    alt: Exterior of the Hall
+    caption: The Hall and surrounds are fully fenced
+  - url: /assets/img/hall-03.jpg
+    alt: Campfire pit
+    caption: Concrete campfire pit
+  - url: /assets/img/hall-04.jpg
+    alt: Hall kitchen
+    caption: Kitchen with stove, microwave, fridge and urn
+  - url: /assets/img/hall-05.jpg
+    alt: Large grassed area
+    caption: Part of the adjacent grassy area and oval
+  - url: /assets/img/hall-06.jpg
+    alt: Covered verandah area
+    caption: Covered verandah suitable for barbecuing in any weather
+  - url: /assets/img/hall-07.jpg
+    alt: Child's playground
+    caption: The nearby playground
+
+calendar_url: https://outlook.office365.com/owa/calendar/fa7d7c8a13b74904a0593f09e3702b30@nsw.scouts.com.au/b115c84b7dec4ee786ae6e0a94991f812912002311597805349/calendar.html
