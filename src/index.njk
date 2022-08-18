@@ -8,24 +8,22 @@ date: Last Modified
 
 
 <section id="join" class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
-  <div class="mx-auto prose prose-xl prose-stone dark:prose-invert
-              prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-              prose-h2:font-black prose-h2:text-3xl
-              prose-strong:font-bold
+  <div class="mx-auto prose prose-lg md:prose-xl prose-stone dark:prose-invert max-w-3xl
+              prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
               prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
     <div class="not-prose mb-8">
       <a href="{{ urls.enquiry_url }}" class="inline-flex items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Enquire Now</a>
     </div>
-    {% markdown %}{% include "content/index-join-header.md" %}{% endmarkdown %}
+    {% markdown %}{% include "content/index-join.md" %}{% endmarkdown %}
   </div>
 
-  <div class="bg-stone-50 dark:bg-stone-900 rounded-lg shadow p-2">
+  <div class="bg-stone-50 dark:bg-stone-900 rounded-xl border border-stone-100 dark:border-stone-700 p-2">
     <div class="grid grid-cols-2 md:grid-cols-4">
     {% for section in sections %}
       <div class="text-center leading-7 px-2 py-4">
         <header class="h-36">
-          <img class="block dark:hidden mx-auto h-full" src="/assets/img/section-{{ section.img }}-220.png" alt="{{ section.name }}">
-          <img class="hidden dark:block mx-auto h-full brightness-90" src="/assets/img/section-{{ section.img }}-invert-220.png" alt="{{ section.name }}">
+          <img class="block dark:hidden mx-auto h-full" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
+          <img class="hidden dark:block mx-auto h-full brightness-90" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-invert-220.png">
         </header>
         <p class="">{{ section.ages }}</p>
         <h3 class="mt-4 font-bold text-scarf-red">Meets</h3>
@@ -40,30 +38,24 @@ date: Last Modified
     </div>
   </div>
 
-  <div class="mx-auto prose prose-lg prose-stone dark:prose-invert
-              prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-              prose-h2:font-black prose-h2:text-3xl
-              prose-strong:font-bold
+  <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+              prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
               prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-    {% markdown %}{% include "content/index-join-footer.md" %}{% endmarkdown %}
+    {% markdown %}{% include "content/index-fees.md" %}{% endmarkdown %}
   </div>
 </section>
 
 
 <section id="volunteer" class="bg-scarf-blue dark:bg-slate-800 py-24 mb-24">
   <div class="container mx-auto px-4 sm:px-12">
-    <div class="flex flex-col md:flex-row items-center justify-center">
-      <img class="h-36 mr-6 mb-6 dark:brightness-90" src="/assets/img/scouts-white-256.png">
-      <div class="prose prose-invert
-                  prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-                  prose-h2:font-black prose-h2:text-3xl
-                  prose-strong:font-bold
-                  prose-p:text-stone-100 dark:prose-p:text-stone-200
-                  prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-        {% markdown %}{% include "content/index-adult-volunteering.md" %}{% endmarkdown %}
-        <div class="not-prose">
-          <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Group Leader</a>
-        </div>
+    <img class="mx-auto h-36 mb-4 dark:brightness-90" alt="" src="/assets/img/scouts-white-256.png">
+    <div class="mx-auto text-center prose md:prose-lg prose-invert max-w-xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-p:text-stone-100 dark:prose-p:text-stone-200
+                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "content/index-adult-volunteering.md" %}{% endmarkdown %}
+      <div class="not-prose">
+        <a href="{{ urls.adult_enquiry_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Group Leader</a>
       </div>
     </div>
   </div>
@@ -73,11 +65,9 @@ date: Last Modified
 <section id="hallhire" class="bg-lime-800 dark:bg-stone-900 py-24">
   <div class="container mx-auto px-4 sm:px-12">
     <div class="grid md:grid-cols-2 gap-6">
-      <img class="block rounded shadow" src="/assets/img/hall.jpg">
-      <div class="prose prose-invert
-                  prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-                  prose-h2:font-black prose-h2:text-3xl
-                  prose-strong:font-bold
+      <img class="block rounded shadow" alt="Interior of Blackheath Scout Hall" src="/assets/img/hall.jpg">
+      <div class="prose prose-invert max-w-xl
+                  prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
                   prose-p:text-stone-100 dark:prose-p:text-stone-200
                   prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
         {% markdown %}{% include "content/index-hallhire.md" %}{% endmarkdown %}
@@ -91,19 +81,17 @@ date: Last Modified
 
 
 <section id="contact" class="container mx-auto px-4 sm:px-12 py-24">
-  <div class="max-w-none prose prose-stone dark:prose-invert
-              prose-h1:text-5xl prose-h1:font-black prose-h1:tracking-tight
-              prose-h2:font-black prose-h2:text-3xl
-              prose-strong:font-bold
-              prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-    <h1>Contacts</h1>
+  <div>
+    <h1 class="text-4xl font-black tracking-tight leading-loose mb-8">Contacts</h1>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mb-12">
       {% for contact in contacts %}
       <div>
-        <div><strong>{{ contact.name }}</strong></div>
-        <div>{{ contact.position }}</div>
-        {% if contact.email %}<div><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></div>{% endif %}
+        <div class="leading-loose"><strong class="font-bold">{{ contact.position }}</strong></div>
+        <div class="leading-loose">{{ contact.name }}</div>
+        {% if contact.email %}<div>
+          <a class="font-bold text-scarf-blue hover:text-scarf-red dark:text-scarf-blue-light underline" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+        </div>{% endif %}
       </div>
       {% endfor %}
     </div>
@@ -111,8 +99,8 @@ date: Last Modified
     <div class="grid md:grid-cols-3 gap-6 md:gap-12">
       {% for content in contacts_extras %}
       <div>
-        <h2>{{ content.title }}</h2>
-        <p>{{ content.body|safe }}</p>
+        <h2 class="text-2xl font-black tracking-tight leading-loose mb-6">{{ content.title }}</h2>
+        <p class="leading-loose">{{ content.body|safe }}</p>
       </div>
       {% endfor %}
     </div>

@@ -1,4 +1,4 @@
-- name: Joeys
+- name: Joey Scouts
   img: joeys
   ages: 5–8 years
   day: Wednesday
@@ -6,7 +6,7 @@
   leaders:
     - Taz (Sharon)
 
-- name: Cubs
+- name: Cub Scouts
   img: cubs
   ages: 8–11 years
   day: Tuesday
@@ -26,7 +26,7 @@
     - Romana (Krystelle)
     - Doc (Ethan)
 
-- name: Venturers
+- name: Venturer Scouts
   img: venturers
   ages: 14–18 years
   day: Monday

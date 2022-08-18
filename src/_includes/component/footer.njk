@@ -1,16 +1,16 @@
 <footer class="space-y-6 pt-12 pb-8 bg-stone-100 dark:bg-stone-900">
   <div class="container mx-auto px-4 sm:px-12">
-    <ol class="flex flex-col sm:flex-row items-center justify-center flex-wrap">
+    <ol class="flex flex-col sm:flex-row items-center justify-center flex-wrap space-x-2">
       {% for unit in organisation %}
-      <li class="flex items-center text-stone-600 dark:text-stone-400">
+      <li class="text-center text-stone-600 dark:text-stone-400">
         {% if not loop.first %}
-        <svg class="flex-shrink-0 h-5 w-5 text-stone-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <svg class="inline-block h-5 w-5 text-stone-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
         </svg>
         {% endif %}
 
         {% if unit.url %}
-        <a class="hover:text-scarf-red underline" href="{{ unit.url }}" target="_blank">{{ unit.name }}</a>
+        <a class="hover:text-scarf-red underline py-2" href="{{ unit.url }}" target="_blank">{{ unit.name }}</a>
         {% else %}
         {{ unit.name }}
         {% endif %}
@@ -20,10 +20,8 @@
   </div>
 
   <div class="flex justify-center space-x-2">
-    <img class="h-16" src="/assets/img/badge-256.png">
-    <a href="https://www.scout.org" target="_blank">
-      <img class="h-16" src="/assets/img/world-scout-emblem-128.png">
-    </a>
+    <img class="h-16" alt="1st Blackheath Scout Group Centenary badge" src="/assets/img/badge-256.png">
+    <img class="h-16" alt="Logo of the World Organization of the Scouting Movement" src="/assets/img/world-scout-emblem-128.png">
   </div>
 
   <div class="container mx-auto px-4 sm:px-12">
@@ -35,7 +33,7 @@
   </div>
 </footer>
 
-<svg class="block w-full h-10 bg-scarf-blue stroke-scarf-red dark:bg-scarf-blue-dark dark:stroke-scarf-red-dark">
+<svg class="block w-full h-4 bg-scarf-blue stroke-scarf-red dark:bg-scarf-blue-dark dark:stroke-scarf-red-dark">
   <defs>
     <pattern id="stripe" width="50" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
       <line x1="0" y1="0" x2="0" y2="10" style="stroke-width:40" />
