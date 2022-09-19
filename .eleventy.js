@@ -1,6 +1,7 @@
 const markdownIt = require('markdown-it');
 const yaml = require('js-yaml');
 const { DateTime, Settings } = require('luxon');
+const { parse } = require('csv-parse/sync');
 Settings.defaultLocale = 'en-AU';
 
 module.exports = function(eleventyConfig) {
@@ -9,6 +10,10 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
+
+  eleventyConfig.addDataExtension('csv', contents => {
+    return parse(contents, {skip_empty_lines: true})
+  });
 
   eleventyConfig.addPassthroughCopy('assets/img');
   eleventyConfig.addPassthroughCopy('assets/files');

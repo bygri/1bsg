@@ -16,16 +16,41 @@ date: Last Modified
       </div>
     </div>
 
+    <div class="max-w-3xl mx-auto mt-24 text-stone-100">
+      <h1 class="text-3xl font-black tracking-tight leading-loose mb-6">Schedule of fees</h1>
+      <table class="min-w-full border">
+        {% for row in hallhire_rates %}
+        {% if loop.first %}
+        <tr>
+          {% for value in row %}
+          <th class="py-3 px-2 w-1/3 border">{{ value }}</th>
+          {% endfor %}
+        </tr>
+        {% else %}
+        <tr>
+          {% for value in row %}
+          {% if loop.first %}
+          <th class="py-3 px-2 border">{{ value }}</th>
+          {% else %}
+          <td class="py-3 px-2 border">{{ value }}</td>
+          {% endif %}
+          {% endfor %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+    </div>
+
     <figure>
       <img class="block w-full mt-24" alt="{{ hallhire.hero_photo.alt }}" src="{{ hallhire.hero_photo.url }}">
-      <figcaption class="mt-2 text-stone-100 font-italic">{{ hallhire.hero_photo.caption }}</figcaption>
+      <figcaption class="mt-2 text-stone-100">{{ hallhire.hero_photo.caption }}</figcaption>
     </figure>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
       {% for photo in hallhire.photos %}
       <figure>
         <img class="block w-full" alt="{{ photo.alt }}" src="{{ photo.url }}">
-        <figcaption class="mt-2 text-stone-100 font-italic">{{ photo.caption }}</figcaption>
+        <figcaption class="mt-2 text-stone-100">{{ photo.caption }}</figcaption>
       </figure>
       {% endfor %}
     </div>
