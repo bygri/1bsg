@@ -10,10 +10,9 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
-
-  eleventyConfig.addDataExtension('csv', contents => {
-    return parse(contents, {skip_empty_lines: true})
-  });
+  eleventyConfig.addDataExtension('csv', contents => parse(contents, {
+    skip_empty_lines: true
+  }));
 
   eleventyConfig.addPassthroughCopy('assets/img');
   eleventyConfig.addPassthroughCopy('assets/files');
