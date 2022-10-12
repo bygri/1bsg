@@ -14,4 +14,4 @@ combustion wood heater, air-conditioning, tables and chairs and a separate
 Outside, features include the grassed camping area with campfire pit,
 covered outdoor area with BBQ, and the adjacent playground and huge oval.
 
-The Hall is located at 2 Park Lane, Blackheath NSW 2785.
+The Hall is located at [2 Park Lane, Blackheath NSW 2785](https://goo.gl/maps/3ehctghfWAwu6E3o7).

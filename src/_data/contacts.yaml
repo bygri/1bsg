@@ -1,27 +1,36 @@
 - name: Toby Griffin (Bagheera)
   position: Group Leader
   email: toby.griffin@nsw.scouts.com.au
+  image: /assets/img/contact/group-128.png
 - name: Russell Brown (Rusty)
   position: Group Manager
   email: russell.brown@nsw.scouts.com.au
+  image: /assets/img/contact/group-128.png
 
-- name: Sharon Davis (Taz)
-  position: Joey and Venturer Leader
-  email: sharon.davis@nsw.scouts.com.au
 - name: Andrew Davis (Rama)
   position: Cub Leader
   email: andrew.davis@nsw.scouts.com.au
+  image: /assets/img/contact/cubs-128.png
 - name: James Robinson (Chip)
   position: Scout Leader
   email: james.robinson@nsw.scouts.com.au
+  image: /assets/img/contact/scouts-128.png
+- name: Sharon Davis (Taz)
+  position: Joey and Venturer Leader
+  email: sharon.davis@nsw.scouts.com.au
+  image: /assets/img/contact/venturers-128.png
 
 - name: Paul Haber
   position: Committee Chairman
+  image: /assets/img/contact/support-128.png
 - name: Suzie Singleton
   position: Committee Secretary
+  image: /assets/img/contact/support-128.png
 - name: Lisa Schack-Evans
   position: Committee Treasurer
   email: lisa.schack-evans@nsw.scouts.com.au
+  image: /assets/img/contact/support-128.png
 - name: Mark Brown
   position: Committee Hall Booking Officer
   email: mark.brown@nsw.scouts.com.au
+  image: /assets/img/contact/support-128.png
