@@ -2,6 +2,11 @@
 layout: page-standard
 page_title: Hall Hire
 date: Last Modified
+
+meta_description: |
+  For group classes, birthday parties or a base camp for exploring the
+  Upper Blue Mountains, book the 1st Blackheath Scout Hall for your
+  venue needs.
 ---
 
 <section class="bg-lime-800 dark:bg-stone-900 py-24">
@@ -10,10 +15,24 @@ date: Last Modified
                 prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
                 prose-p:text-stone-100 dark:prose-p:text-stone-200
                 prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-      {% markdown %}{% include "content/hallhire.md" %}{% endmarkdown %}
+      {% markdown %}{% include "./_content/hallhire/hallhire.md" %}{% endmarkdown %}
       <div class="not-prose">
         <a href="{{ urls.hall_hire_url }}" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Contact the Hall Booking Officer</a>
       </div>
+    </div>
+
+    <figure>
+      <img class="block w-full mt-24" alt="{{ hallhire.hero_photo.alt }}" src="{{ hallhire.hero_photo.url }}">
+      <figcaption class="mt-2 text-stone-100">{{ hallhire.hero_photo.caption }}</figcaption>
+    </figure>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      {% for photo in hallhire.photos %}
+      <figure>
+        <img class="block w-full" alt="{{ photo.alt }}" src="{{ photo.url }}">
+        <figcaption class="mt-2 text-stone-100">{{ photo.caption }}</figcaption>
+      </figure>
+      {% endfor %}
     </div>
 
     <div class="max-w-3xl mx-auto mt-24 text-stone-100">
@@ -40,22 +59,6 @@ date: Last Modified
         {% endfor %}
       </table>
     </div>
-
-    <figure>
-      <img class="block w-full mt-24" alt="{{ hallhire.hero_photo.alt }}" src="{{ hallhire.hero_photo.url }}">
-      <figcaption class="mt-2 text-stone-100">{{ hallhire.hero_photo.caption }}</figcaption>
-    </figure>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-      {% for photo in hallhire.photos %}
-      <figure>
-        <img class="block w-full" alt="{{ photo.alt }}" src="{{ photo.url }}">
-        <figcaption class="mt-2 text-stone-100">{{ photo.caption }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
-
-
   </div>
 </section>
 
