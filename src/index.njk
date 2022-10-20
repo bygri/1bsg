@@ -26,24 +26,38 @@ meta_description: |
     {% markdown %}{% include "./_content/index/join-about.md" %}{% endmarkdown %}
   </div>
 
-  <div class="bg-stone-50 dark:bg-stone-900 rounded-xl border border-stone-100 dark:border-stone-700 p-2">
-    <div class="grid grid-cols-2 md:grid-cols-4">
-    {% for section in sections %}
-      <div class="text-center leading-7 px-2 py-4">
-        <header class="h-36">
-          <img class="block dark:hidden mx-auto h-full" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
-          <img class="hidden dark:block mx-auto h-full brightness-90" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-invert-220.png">
-        </header>
-        <p class="">{{ section.ages }}</p>
-        <h3 class="mt-4 font-bold text-scarf-red">Meets</h3>
-        <p>{{ section.day }}</p>
-        <p>{{ section.time }}</p>
-        <h3 class="mt-4 font-bold text-scarf-red">Leaders</h3>
-        {% for leader in section.leaders %}
-        <p>{{ leader }}</p>
-        {% endfor %}
+  <div class="space-y-12">
+    <div class="bg-stone-50 dark:bg-stone-900 rounded-xl border border-stone-100 dark:border-stone-700 p-2">
+      <div class="grid grid-cols-2 md:grid-cols-4">
+      {% for section in sections %}
+        <div class="text-center leading-7 px-2 py-4">
+          <header class="h-36">
+            <img class="block dark:hidden mx-auto h-full" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
+            <img class="hidden dark:block mx-auto h-full brightness-90" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-invert-220.png">
+          </header>
+          <p class="">{{ section.ages }}</p>
+          <h3 class="mt-4 font-bold text-scarf-red">Meets</h3>
+          <p>{{ section.day }}</p>
+          <p>{{ section.time }}</p>
+          <h3 class="mt-4 font-bold text-scarf-red">Leaders</h3>
+          {% for leader in section.leaders %}
+          <p>{{ leader }}</p>
+          {% endfor %}
+        </div>
+      {% endfor %}
       </div>
-    {% endfor %}
+    </div>
+
+    <div class="mx-auto max-w-3xl flex flex-col sm:flex-row items-center space-x-8">
+      <div class="h-28 flex-shrink-0">
+        <img class="block dark:hidden h-full" alt="Rover Scouts logo" src="/assets/img/section-rovers-220.png">
+        <img class="hidden dark:block h-full brightness-90" alt="Rover Scouts logo" src="/assets/img/section-rovers-invert-220.png">
+      </div>
+      <div class="prose md:prose-lg prose-stone dark:prose-invert
+                  prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                  prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+        {% markdown %}{% include "./_content/index/join-rovers.md" %}{% endmarkdown %}
+      </div>
     </div>
   </div>
 
