@@ -1,6 +1,6 @@
 ## Costs
 
-There is a one-off joining fee of $115, an annual membership fee of $250, and a per-term fee of $55 ($35 for Joeys).
+There is a one-off registration fee of $115, an annual membership fee of $270, and a per-term fee of $55 ($35 for Joeys).
 Scouts NSW accepts Active Kids Vouchers, and [assistance is available](https://nsw.scouts.com.au/familysupportfund/)
 for families facing financial challenges.
 
