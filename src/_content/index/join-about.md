@@ -6,7 +6,7 @@ When not at our Scout Hall, we are off hiking or camping in our beautiful natura
 environment.
 
 Our members represent all the towns in the upper mountains including Blackheath, Katoomba,
-Megalong, Wentworth Falls, Leura, Mt Victoria and Hartley.
+Megalong, Wentworth Falls, Leura, Mt Victoria, Hartley and Lithgow.
 
 We'd love to welcome your child for a free 3 week trial, to see what
 Scouting is all about and to meet the kids and Leaders at 1st Blackheath.

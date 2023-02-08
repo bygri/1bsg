@@ -7,6 +7,10 @@
   email: russell.brown@nsw.scouts.com.au
   image: /assets/img/contact/group-128.png
 
+- name: Sharon Davis (Taz)
+  position: Joey Leader
+  email: sharon.davis@nsw.scouts.com.au
+  image: /assets/img/contact/joeys-128.png
 - name: Andrew Davis (Rama)
   position: Cub Leader
   email: andrew.davis@nsw.scouts.com.au
@@ -15,9 +19,9 @@
   position: Scout Leader
   email: james.robinson@nsw.scouts.com.au
   image: /assets/img/contact/scouts-128.png
-- name: Sharon Davis (Taz)
-  position: Joey and Venturer Leader
-  email: sharon.davis@nsw.scouts.com.au
+- name: Ethan Fitzpatrick (Doc)
+  position: Venturer Leader
+  email: ethan.fitzpatrick@nsw.scouts.com.au
   image: /assets/img/contact/venturers-128.png
 
 - name: Paul Haber
@@ -31,6 +35,6 @@
   email: lisa.schack-evans@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
 - name: Mark Brown
-  position: Committee Hall Booking Officer
+  position: Hall Booking Officer
   email: mark.brown@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
