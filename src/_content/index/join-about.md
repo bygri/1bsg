@@ -10,4 +10,4 @@ Megalong, Wentworth Falls, Leura, Mt Victoria, Hartley and Lithgow.
 
 We'd love to welcome your child for a free 3 week trial, to see what
 Scouting is all about and to meet the kids and Leaders at 1st Blackheath.
-Please [submit an enquiry]({{ urls.enquiry_url}}) to book in your trial.
+Please [submit an inquiry](/youth-inquiry/) to book in your trial.

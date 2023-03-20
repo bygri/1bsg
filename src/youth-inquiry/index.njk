@@ -4,46 +4,45 @@ page_title: Youth Inquiry
 date: Last Modified
 
 meta_description: |
-  Scouting is about fun, friends, adventure and so much more. Inquire now.
+  Scouting is about fun, friends, adventure and so much more. Inquire now for
+  your free 3 week trial.
 ---
 
-<section id="join" class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
-  <div class="mx-auto prose prose-lg md:prose-xl prose-stone dark:prose-invert max-w-3xl
-              prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-              prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-    {% markdown %}{% include "./_content/index/join-intro.md" %}{% endmarkdown %}
+<section class="bg-stone-100 dark:bg-stone-800 py-24">
+  <div class="container mx-auto px-4 sm:px-12">
+    <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/youth-inquiry/intro.md" %}{% endmarkdown %}
+    </div>
   </div>
+</section>
 
-  <div class="px-6 lg:px-8">
-    <form name="youth-inquiry" netlify action="/" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+<section class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
+  <div class="mx-auto max-w-xl">
+    <form name="youth-inquiry" netlify action="/youth-inquiry/success/" method="POST">
       <input type="hidden" name="subject" value="Youth Inquiry">
       <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-        <div>
-          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
-          <div class="mt-2.5">
-            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
-          <div class="mt-2.5">
-            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
         <div class="sm:col-span-2">
+          <label for="parent-name" class="block text-sm font-semibold leading-6 text-gray-900">Your name</label>
+          <div class="mt-2.5">
+            <input type="text" name="parent-name" id="parent-name" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
+          </div>
+        </div>
+        <div>
           <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
           <div class="mt-2.5">
             <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
           </div>
         </div>
-        <div class="sm:col-span-2">
+        <div>
           <label for="phone" class="block text-sm font-semibold leading-6 text-gray-900">Phone</label>
           <div class="mt-2.5">
             <input type="tel" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
+          <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message—please include child names and ages</label>
           <div class="mt-2.5">
             <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 py-2 px-3.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6"></textarea>
           </div>
