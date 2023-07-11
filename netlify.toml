@@ -2,3 +2,9 @@
   for = "/*"
   [headers.values]
     X-Clacks-Overhead = "GNU Terry Pratchett"
+
+[[redirects]]
+  from = "/hall-hire/"
+  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/hall-hire/"
+  status = 302
+  force = true
