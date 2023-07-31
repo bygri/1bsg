@@ -10,6 +10,12 @@
     force = true
 
 [[redirects]]
+  from = "/register/"
+  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/youth-inquiry/"
   to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
   status = 302
