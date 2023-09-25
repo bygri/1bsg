@@ -10,8 +10,8 @@
 
   <nav class="relative flex items-center justify-between md:justify-center space-x-10 py-3 bg-white dark:bg-black border-b border-stone-100 dark:border-stone-700" x-data="{open: false}">
     <a class="block px-2 py-1 hover:bg-stone-100 dark:hover:bg-stone-800 rounded-md" href="/">
-      <img class="block dark:hidden h-12" src="/assets/img/1stBlackheath-horizontal-468x100.png">
-      <img class="hidden dark:block h-12 brightness-90" src="/assets/img/1stBlackheath-horizontal-invert-468x100.png">
+      <img class="block dark:hidden max-h-12" src="/assets/img/1stBlackheath-horizontal-468x100.png">
+      <img class="hidden dark:block max-h-12 brightness-90" src="/assets/img/1stBlackheath-horizontal-invert-468x100.png">
     </a>
     {% for item in menu_items %}
     <a class="hidden md:block px-4 py-2 text-lg font-medium text-stone-500 hover:text-scarf-red hover:bg-stone-100 dark:hover:bg-stone-800 rounded-md" href="{{ item.href }}" {% if item.external %}target="_blank"{% endif %}>{{ item.title }}</a>

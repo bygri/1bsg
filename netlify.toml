@@ -4,37 +4,7 @@
     X-Clacks-Overhead = "GNU Terry Pratchett"
 
 [[redirects]]
-    from = "/"
-    to = "https://www.1st-blackheath.group.scoutsnsw.com.au/"
-    status = 302
-    force = true
-
-[[redirects]]
   from = "/register/"
   to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
   status = 301
-  force = true
-
-[[redirects]]
-  from = "/youth-inquiry/"
-  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/volunteering/"
-  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/volunteering/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/volunteering/*"
-  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/volunteering/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/hall-hire/"
-  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/hall-hire/"
-  status = 302
   force = true

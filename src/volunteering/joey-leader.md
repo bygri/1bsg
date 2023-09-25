@@ -3,7 +3,7 @@ title: Joey Leader
 precis: |
   The JL leads the Joey section.
 open: true
-priority: true
+priority: false
 date: Last Modified
 ---
 
