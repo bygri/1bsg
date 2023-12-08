@@ -1,6 +1,6 @@
 ## Costs
 
-There is a one-off registration fee of $135, plus a membership fee of $255 ($215 for Joeys)
+There is a one-off registration fee of $135, plus a membership fee of $260 ($220 for Joeys)
 paid every six months.
 If you [become a Leader or join our Support Committee](/volunteering/), you'll save $80 a year.
 
