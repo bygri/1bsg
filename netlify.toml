@@ -8,3 +8,9 @@
   to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/sc-minutes/"
+  to = "https://nswscouts-my.sharepoint.com/:f:/g/personal/toby_griffin_nsw_scouts_com_au/Em4q9ozFJd9NucpgqRdikegBdzsGyaJoyQBKmsEKyZWQFA"
+  status = 301
+  force = true
