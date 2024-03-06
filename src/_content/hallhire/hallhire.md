@@ -7,8 +7,8 @@ It's perfect for overnight camps, birthday parties, private functions or
 regular bookings such as fitness groups, and convenient to Katoomba, Leura,
 Medlow Bath, Wentworth Falls and Mt Victoria.
 
-Our Hall is fitted with a kitchen, toilet and shower facilities, slow
-combustion wood heater, air-conditioning, tables and chairs and a separate
+Our Hall is fitted with a kitchen, newly renovated toilet and shower facilities,
+slow combustion wood heater, air-conditioning, tables and chairs and a separate
 10m2 meeting room. It's accessible by ramp.
 
 Outside, features include the grassed camping area with campfire pit,
