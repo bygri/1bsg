@@ -3,10 +3,10 @@
   email: toby.griffin@nsw.scouts.com.au
   image: /assets/img/contact/group-128.png
 
-# - name: TBC
-#   position: Joey Leader
-#   email: TBC
-#   image: /assets/img/contact/joeys-128.png
+- name: Sarah O'Flynn
+  position: Joey Leader
+  email: sarah.oflynn@nsw.scouts.com.au
+  image: /assets/img/contact/joeys-128.png
 - name: Andrew Davis (Rama)
   position: Cub Leader
   email: andrew.davis@nsw.scouts.com.au
@@ -21,6 +21,6 @@
   image: /assets/img/contact/venturers-128.png
 
 - name: Lisa Schack-Evans
-  position: Committee Treasurer
+  position: Committee President
   email: lisa.schack-evans@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
