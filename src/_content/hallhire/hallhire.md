@@ -8,8 +8,8 @@ regular bookings such as fitness groups, and convenient to Katoomba, Leura,
 Medlow Bath, Wentworth Falls and Mt Victoria.
 
 Our Hall is fitted with a kitchen, newly renovated toilet and shower facilities,
-slow combustion wood heater, air-conditioning, tables and chairs and a separate
-10m2 meeting room. It's accessible by ramp.
+air-conditioning, tables and chairs and a separate 10m2 meeting room. It's
+accessible by ramp. Please note the wood heater is currently out of action.
 
 Outside, features include the grassed camping area with campfire pit,
 covered outdoor area with BBQ, and the adjacent playground and huge oval.
