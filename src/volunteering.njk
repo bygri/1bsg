@@ -30,11 +30,11 @@ meta_description: |
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {% for item in collections.volunteer_position | sort(true, false, "data.priority") %}
         {% if item.data.open %}
-        <div class="relative rounded-lg border border-stone-300 bg-white px-6 py-5 shadow-sm flex hover:border-stone-400">
+        <div class="relative rounded-lg border border-stone-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-6 py-5 shadow-sm flex hover:border-stone-400">
           <div class="flex-1 min-w-0">
             <a href="{{ item.url }}" class="focus:outline-none">
               <p class="font-bold mb-2">{{ item.data.title }}</p>
-              <p class="text-stone-600">{{ item.data.precis }}</p>
+              <p class="text-stone-600 dark:text-stone-400">{{ item.data.precis }}</p>
               {% if item.data.priority %}
               <span class="mt-2 inline-flex items-center px-3 py-0.5 rounded-full bg-green-100 text-green-800">
                 <svg class="-ml-1 mr-1.5 h-4 w-4 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">

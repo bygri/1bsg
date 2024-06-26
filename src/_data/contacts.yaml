@@ -1,6 +1,6 @@
 - name: Toby Griffin (Bagheera)
   position: Group Leader
-  email: toby.griffin@nsw.scouts.com.au
+  email: GL.1stBlackheath@nsw.scouts.com.au
   image: /assets/img/contact/group-128.png
 
 - name: Sarah O'Flynn
@@ -21,6 +21,14 @@
   image: /assets/img/contact/venturers-128.png
 
 - name: Lisa Schack-Evans
-  position: Committee President
-  email: lisa.schack-evans@nsw.scouts.com.au
+  position: Committee Chair
+  email: GC.1stBlackheath@nsw.scouts.com.au
+  image: /assets/img/contact/support-128.png
+- name: Eve Slavich
+  position: Committee Secretary
+  email: GS.1stBlackheath@nsw.scouts.com.au
+  image: /assets/img/contact/support-128.png
+- name: Howard Fraser
+  position: Committee Treasurer
+  email: GT.1stBlackheath@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
