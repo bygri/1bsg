@@ -3,11 +3,75 @@
   [headers.values]
     X-Clacks-Overhead = "GNU Terry Pratchett"
 
+
 [[redirects]]
-  from = "/register/"
-  to = "https://www.1st-blackheath.group.scoutsnsw.com.au/registration/"
+  from = "/register/trial/joey/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292515"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/register/trial/cub/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292514"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/trial/scout/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292516"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/trial/venturer/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292517"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/register/new/adult/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292518"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/new/leader/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292519"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/new/joey/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292523"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/new/cub/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292522"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/new/scout/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292521"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/new/venturer/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?membership=292520"
+  status = 301
+  force = true
+
+
+[[redirects]]
+    from = "/register/"
+    to = "https://1st-blackheath.group.scoutsnsw.com.au/registration/"
+    status = 301
+    force = true
+
 
 [[redirects]]
   from = "/sc-minutes/"
