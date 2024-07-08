@@ -68,7 +68,7 @@
 
 [[redirects]]
     from = "/register/"
-    to = "https://1st-blackheath.group.scoutsnsw.com.au/registration/"
+    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
     status = 301
     force = true
 
