@@ -6,62 +6,62 @@
 
 [[redirects]]
   from = "/register/trial/joey/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292515"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=344323"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/cub/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292514"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=344324"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/scout/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292516"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=344325"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/venturer/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292517"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=344330"
   status = 301
   force = true
 
 
 [[redirects]]
   from = "/register/new/adult/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292518"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341847"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/leader/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292519"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341848"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/joey/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292523"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341843"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/cub/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292522"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341844"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/scout/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292521"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341845"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/venturer/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=292520"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&membership=341846"
   status = 301
   force = true
 
