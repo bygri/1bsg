@@ -71,6 +71,16 @@
     to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
     status = 301
     force = true
+[[redirects]]
+    from = "/register/active-creative-kids/"
+    to = "https://www.scoutsnsw.com.au/voucher-redemption/"
+    status = 301
+    force = true
+[[redirects]]
+    from = "/register/payment-plan/"
+    to = "https://forms.office.com/pages/responsepage.aspx?id=S7vnQHd2UEyzs2vwJ_MecbUWdmNH17VKqMPYErytB-ZUNVk1VDZXRU9CWkc3M083UlpKRlc5RllOSi4u"
+    status = 301
+    force = true
 
 
 [[redirects]]
