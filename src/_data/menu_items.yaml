@@ -4,8 +4,8 @@
   href: /volunteering/
 - title: Hall Hire
   href: /hall-hire/
-- title: Register
-  href: /register/
-  external: true
+# - title: Register
+#   href: /register/
+#   external: true
 - title: Contact
   href: "/#contact"
