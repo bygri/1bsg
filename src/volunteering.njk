@@ -16,13 +16,20 @@ meta_description: |
                 prose-p:text-stone-100 dark:prose-p:text-stone-200
                 prose-a:font-bold hover:prose-a:text-scarf-red prose-a:underline">
       {% markdown %}{% include "./_content/volunteering/volunteering.md" %}{% endmarkdown %}
-      <div class="not-prose">
-        <div class="text-center">
-        <a href="{{ urls.seek_volunteer }}" class="block inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">
-          See our current volunteering opportunities on SEEK Volunteer
-        </a>
+      <noscript>
+        <div class="not-prose">
+          <div class="text-center">
+          <a href="{{ urls.seek_volunteer }}" class="block inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">
+            See our current volunteering opportunities on SEEK Volunteer
+          </a>
+          </div>
         </div>
-      </div>
+      </noscript>
     </div>
   </div>
+</section>
+
+<section class="container mx-auto px-4 sm:px-12 py-12">
+  <script src="https://widget.volunteer.com.au/au/main.js" data-vw-id="a9353fef-4317-46f6-8351-3877ffa912db" async></script>
+  <div data-vw="search-results"  data-load-results-on-init=true>Loading...</div>
 </section>
