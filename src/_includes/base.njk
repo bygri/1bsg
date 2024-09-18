@@ -14,7 +14,9 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>{% if page_title %}{{ page_title }} | {% endif %}1st Blackheath Scout Group</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    {% if env.environment != "development" %}
     <script defer src="https://umami.tobygriffin.dev/script.js" data-website-id="0ef208ba-c922-440e-8a4c-d04636ea3b0f"></script>
+    {% endif %}
     <script>
       var _paq = window._paq = window._paq || [];
       {% if env.environment != "development" %}
