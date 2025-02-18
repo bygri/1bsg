@@ -1,6 +1,6 @@
 # Youth Trial Inquiry
 
-At 1st Blackheath Scout Group, we offer a free 3 week trial for prospective
+At 1st Blackheath Scout Group, we offer a free 4 week trial for prospective
 Joeys, Cubs, Scouts and Venturers. Use the form below to contact the Group
 to organise your trial.
 
