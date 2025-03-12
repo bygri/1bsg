@@ -10,17 +10,25 @@ no_robots: true
   <div class="container mx-auto px-4 sm:px-12">
     <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
                 prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
       {% markdown %}{% include "../_content/register/new.md" %}{% endmarkdown %}
     </div>
   </div>
 </section>
 
 <section class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
+
+
   <div class="mx-auto max-w-xl lg:max-w-3xl">
+    <div class="pb-8
+                mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/register/new-youth.md" %}{% endmarkdown %}
+    </div>
     <ul class="grid lg:grid-cols-2 gap-8">
       {% for section in sections %}
-        <li class="relative flex items-center gap-x-6 p-4 border dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+        <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
           <div class="shrink-0 h-16">
             <img class="block mx-auto h-full" src="{{ section.small_img }}">
           </div>
@@ -30,7 +38,8 @@ no_robots: true
               <h3 class="text-xl font-bold text-scarf-red">{{ section.name }}</h3>
             </a>
             <p>{{ section.ages }}</p>
-            <p>{{ section.day }} {{ section.time }}</p>
+            <p>{{ section.day }}</p>
+            <p>{{ section.time }}</p>
           </div>
           <div class="shrink-0">
             <svg class="size-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -39,8 +48,16 @@ no_robots: true
           </div>
         </li>
       {% endfor %}
+    </ul>
 
-      <li class="relative flex items-center gap-x-6 p-4 border dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+    <div class="pt-16 pb-8
+                mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/register/new-adult.md" %}{% endmarkdown %}
+    </div>
+    <ul class="grid lg:grid-cols-2 gap-8">
+      <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
         <div class="shrink-0 h-16">
           <img class="block mx-auto h-full" src="/assets/img/contact/group-128.png">
         </div>
@@ -57,7 +74,7 @@ no_robots: true
           </svg>
         </div>
       </li>
-      <li class="relative flex items-center gap-x-6 p-4 border dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+      <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
         <div class="shrink-0 h-16">
           <img class="block mx-auto h-full" src="/assets/img/contact/support-128.png">
         </div>
