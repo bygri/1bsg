@@ -20,22 +20,26 @@ meta_description: |
         <a href="/hall-hire/#inquiry" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Make a booking inquiry</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <figure class="bg-stone-100 dark:bg-stone-700 rounded-md p-0.5 mt-24">
+<section class="bg-stone-100 dark:bg-stone-900 py-24">
+  <div class="container mx-auto px-4 sm:px-12 mb-12">
+    <figure class="bg-lime-800 text-stone-100 dark:text-stone-200 rounded-md">
       <img class="block w-full rounded-t" alt="{{ hallhire.hero_photo.alt }}" src="{{ hallhire.hero_photo.url }}">
-      <figcaption class="mx-1 mt-1">{{ hallhire.hero_photo.caption }}</figcaption>
+      <figcaption class="text-center text-lg px-3 py-2">{{ hallhire.hero_photo.caption }}</figcaption>
     </figure>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       {% for photo in hallhire.photos %}
-      <figure class="bg-stone-100 dark:bg-stone-700 rounded-md p-0.5">
+      <figure class="bg-lime-800 text-stone-100 dark:text-stone-200 rounded-md">
         <img class="block w-full rounded-t" alt="{{ photo.alt }}" src="{{ photo.url }}">
-        <figcaption class="mx-1 mt-1">{{ photo.caption }}</figcaption>
+        <figcaption class="text-center text-lg px-3 py-2">{{ photo.caption }}</figcaption>
       </figure>
       {% endfor %}
     </div>
 
-    <div class="mx-auto mt-24 bg-stone-100 dark:bg-stone-800 rounded-md p-8">
+    <div class="mx-auto mt-24 bg-white dark:bg-stone-800 rounded-md p-8">
       <div class="mx-auto max-w-3xl">
         <h1 class="text-3xl font-black tracking-tight leading-loose mb-6">Schedule of fees</h1>
         <table class="min-w-full border border-stone-400 dark:border-stone-500">
