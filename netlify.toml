@@ -13,79 +13,70 @@
 
 [[redirects]]
   from = "/register/trial/joey/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=344323"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404850"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/cub/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=344324"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404853"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/scout/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=344325"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404854"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/trial/venturer/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=344330"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404851"
   status = 301
   force = true
 
-
-[[redirects]]
-  from = "/register/new/adult/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341847"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/register/new/leader/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341848"
-  status = 301
-  force = true
 
 [[redirects]]
   from = "/register/new/joey/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341843"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404846"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/cub/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341844"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404847"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/scout/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341845"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404848"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/venturer/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=341846"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404849"
   status = 301
   force = true
 
 
 [[redirects]]
+    from = "/register/new/adult/"
+    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404852"
+    status = 301
+    force = true
+
+  [[redirects]]
+    from = "/register/new/leader/"
+    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=412441"
+    status = 301
+    force = true
+
+
+[[redirects]]
     from = "/register/"
     to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
-    status = 301
-    force = true
-[[redirects]]
-    from = "/register/active-creative-kids/"
-    to = "https://www.scoutsnsw.com.au/voucher-redemption/"
-    status = 301
-    force = true
-[[redirects]]
-    from = "/register/payment-plan/"
-    to = "https://forms.office.com/pages/responsepage.aspx?id=S7vnQHd2UEyzs2vwJ_MecbUWdmNH17VKqMPYErytB-ZUNVk1VDZXRU9CWkc3M083UlpKRlc5RllOSi4u"
     status = 301
     force = true
 
