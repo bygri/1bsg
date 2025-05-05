@@ -3,14 +3,7 @@
   [headers.values]
     X-Clacks-Overhead = "GNU Terry Pratchett"
 
-
-[[redirects]]
-  from = "/register/renew/"
-  # to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
-  status = 301
-  force = true
-
+# TRIAL
 
 [[redirects]]
   from = "/register/trial/joey/"
@@ -36,6 +29,7 @@
   status = 301
   force = true
 
+# NEW
 
 [[redirects]]
   from = "/register/new/joey/"
@@ -61,26 +55,63 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/register/new/adult/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404852"
+  status = 301
+  force = true
 
 [[redirects]]
-    from = "/register/new/adult/"
-    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404852"
+  from = "/register/new/leader/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=412441"
+  status = 301
+  force = true
+
+# RENEW
+
+[[redirects]]
+    from = "/register/renew/joey/"
+    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404844"
     status = 301
     force = true
 
-  [[redirects]]
-    from = "/register/new/leader/"
-    to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=412441"
-    status = 301
-    force = true
+[[redirects]]
+  from = "/register/renew/cub/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404841"
+  status = 301
+  force = true
 
+[[redirects]]
+  from = "/register/renew/scout/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404842"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/renew/venturer/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404843"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/renew/adult/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=412442"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register/renew/leader/"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=412440"
+  status = 301
+  force = true
+
+# OTHER
 
 [[redirects]]
     from = "/register/"
     to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
     status = 301
     force = true
-
 
 [[redirects]]
   from = "/sc-minutes/"

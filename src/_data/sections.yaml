@@ -9,6 +9,7 @@
     - Brett
   small_img: /assets/img/contact/joeys-128.png
   new_url: /register/new/joey/
+  renew_url: /register/renew/joey/
   trial_url: /register/trial/joey/
 
 - name: Cub Scouts
@@ -21,6 +22,7 @@
     - Chip (James)
   small_img: /assets/img/contact/cubs-128.png
   new_url: /register/new/cub/
+  renew_url: /register/renew/cub/
   trial_url: /register/trial/cub/
 
 - name: Scouts
@@ -34,6 +36,7 @@
     - Geronimo (Jemima)
   small_img: /assets/img/contact/scouts-128.png
   new_url: /register/new/scout/
+  renew_url: /register/renew/scout/
   trial_url: /register/trial/scout/
 
 - name: Venturer Scouts
@@ -45,4 +48,5 @@
     - Dropbear (Helen)
   small_img: /assets/img/contact/venturers-128.png
   new_url: /register/new/venturer/
+  renew_url: /register/renew/venturer/
   trial_url: /register/trial/venturer/

@@ -1,0 +1,98 @@
+---
+layout: page-standard
+page_title: Renew Membership
+date: Last Modified
+
+no_robots: true
+---
+
+<section class="bg-stone-100 dark:bg-stone-800 py-24">
+  <div class="container mx-auto px-4 sm:px-12">
+    <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/register/renew.md" %}{% endmarkdown %}
+    </div>
+  </div>
+</section>
+
+<section class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
+
+
+  <div class="mx-auto max-w-xl lg:max-w-3xl">
+    <div class="pb-8
+                mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/register/renew-youth.md" %}{% endmarkdown %}
+    </div>
+    <ul class="grid lg:grid-cols-2 gap-8">
+      {% for section in sections %}
+        <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+          <div class="shrink-0 h-16">
+            <img class="block mx-auto h-full" src="{{ section.small_img }}">
+          </div>
+          <div class="flex-grow">
+            <a href="{{ section.renew_url }}">
+              <span class="absolute inset-x-0 -top-px bottom-0"></span>
+              <h3 class="text-xl font-bold text-scarf-red">{{ section.name }}</h3>
+            </a>
+            <p>{{ section.ages }}</p>
+            <p>{{ section.day }}</p>
+            <p>{{ section.time }}</p>
+          </div>
+          <div class="shrink-0">
+            <svg class="size-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="pt-16 pb-8
+                mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
+                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
+                prose-a:font-bold prose-a:text-scarf-blue prose-a:hover:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+      {% markdown %}{% include "../_content/register/renew-adult.md" %}{% endmarkdown %}
+    </div>
+    <ul class="grid lg:grid-cols-2 gap-8">
+      <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+        <div class="shrink-0 h-16">
+          <img class="block mx-auto h-full" src="/assets/img/contact/group-128.png">
+        </div>
+        <div class="flex-grow">
+          <a href="/register/renew/leader/">
+            <span class="absolute inset-x-0 -top-px bottom-0"></span>
+            <h3 class="text-xl font-bold text-scarf-red">Leader</h3>
+          </a>
+          <p>Renew membership as a Leader</p>
+        </div>
+        <div class="shrink-0">
+          <svg class="size-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </li>
+      <li class="relative flex items-center gap-x-6 p-4 border border-stone-200 dark:border-stone-700 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+        <div class="shrink-0 h-16">
+          <img class="block mx-auto h-full" src="/assets/img/contact/support-128.png">
+        </div>
+        <div class="flex-grow">
+          <a href="/register/renew/adult/">
+            <span class="absolute inset-x-0 -top-px bottom-0"></span>
+            <h3 class="text-xl font-bold text-scarf-red">Adult Helper</h3>
+          </a>
+          <p>Renew membership as an Adult Helper</p>
+        </div>
+        <div class="shrink-0">
+          <svg class="size-6 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</section>
