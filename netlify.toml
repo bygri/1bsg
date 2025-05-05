@@ -6,7 +6,8 @@
 
 [[redirects]]
   from = "/register/renew/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew"
+  # to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh"
   status = 301
   force = true
 
