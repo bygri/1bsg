@@ -33,25 +33,25 @@
 
 [[redirects]]
   from = "/register/new/joey/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404846"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404846"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/cub/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404847"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404847"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/scout/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404848"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404848"
   status = 301
   force = true
 
 [[redirects]]
   from = "/register/new/venturer/"
-  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=rego&membership=404849"
+  to = "https://1st-blackheath.group.scoutsnsw.com.au/rego/start/?fresh&proposed_mode=renew&membership=404849"
   status = 301
   force = true
 
