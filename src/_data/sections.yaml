@@ -4,9 +4,8 @@
   day: Wednesday
   time: 5:00pm–6:00pm
   leaders:
-    - Kanga (Sarah)
-    - Rikki (Michael)
-    - Brett
+    - Sarah (Kanga)
+    - Michael (Rikki)
   small_img: /assets/img/contact/joeys-128.png
   new_url: /register/new/joey/
   renew_url: /register/renew/joey/
@@ -18,8 +17,8 @@
   day: Tuesday
   time: 6:00pm–7:30pm
   leaders:
-    - Rama (Andrew)
-    - Chip (James)
+    - Andrew (Rama)
+    - James (Chip)
   small_img: /assets/img/contact/cubs-128.png
   new_url: /register/new/cub/
   renew_url: /register/renew/cub/
@@ -31,9 +30,9 @@
   day: Thursday
   time: 6:30pm–8:30pm
   leaders:
-    - Chip (James)
-    - Specs (Luke)
-    - Geronimo (Jemima)
+    - James (Chip)
+    - Luke (Specs)
+    - Jemima (Geronimo)
   small_img: /assets/img/contact/scouts-128.png
   new_url: /register/new/scout/
   renew_url: /register/renew/scout/
@@ -45,7 +44,8 @@
   day: Wednesday
   time: 6:30pm–8:30pm
   leaders:
-    - Dropbear (Helen)
+    - Helen (Dropbear)
+    - Ken
   small_img: /assets/img/contact/venturers-128.png
   new_url: /register/new/venturer/
   renew_url: /register/renew/venturer/
