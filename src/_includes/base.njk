@@ -17,24 +17,23 @@
     {% if env.environment != "development" %}
     <script defer src="https://umami.tobygriffin.dev/script.js" data-website-id="0ef208ba-c922-440e-8a4c-d04636ea3b0f"></script>
     {% endif %}
-    <script>
-      var _paq = window._paq = window._paq || [];
-      {% if env.environment != "development" %}
-      _paq.push(['setSecureCookie', true]);
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u='https://matomo.tobygriffin.dev/';
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '5']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-      {% endif %}
-    </script>
   </head>
 
   <body class="text-stone-800 dark:bg-black dark:text-stone-200">
     {{ content | safe }}
+
+    {% if env.environment != "development" %}
+    <script type="text/javascript">
+      (() => {
+        const name = 'outbound-link-click';
+        document.querySelectorAll('a').forEach(a => {
+          if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+            a.setAttribute('data-umami-event', name);
+            a.setAttribute('data-umami-event-url', a.href);
+          }
+        });
+      })();
+    </script>
+    {% endif %}
   </body>
 </html>
