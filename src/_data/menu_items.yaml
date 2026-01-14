@@ -1,8 +1,8 @@
 - title: Register
   href: /register/
-- title: Volunteer
-  href: /volunteering/
 - title: Hall Hire
   href: /hall-hire/
 - title: Contact
   href: "/#contact"
+- title: Login
+  href: /login/
