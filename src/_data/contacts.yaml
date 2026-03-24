@@ -2,8 +2,12 @@
   position: Group Leader
   email: GL.1stBlackheath@nsw.scouts.com.au
   image: /assets/img/contact/group-128.png
+- name: Mick Kerr (Greybrother)
+  position: Assistant Group Leader
+  email: mick.kerr@nsw.scouts.com.au
+  image: /assets/img/contact/group-128.png
 - name: Lisa Schack-Evans
-  position: Committee Chair
+  position: Group Chair
   email: GC.1stBlackheath@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
 
@@ -25,10 +29,14 @@
   image: /assets/img/contact/venturers-128.png
 
 - name: Eve Slavich
-  position: Committee Secretary
+  position: Group Secretary
   email: GS.1stBlackheath@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
-- name: Howard Fraser
-  position: Committee Treasurer
+- name: Lauren Griffin
+  position: Group Treasurer
   email: GT.1stBlackheath@nsw.scouts.com.au
+  image: /assets/img/contact/support-128.png
+- name: Lucy Frere-Scott
+  position: Hall Hire Officer
+  email: lucy.frere-scott@nsw.scouts.com.au
   image: /assets/img/contact/support-128.png
