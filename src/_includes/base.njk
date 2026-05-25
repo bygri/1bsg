@@ -14,9 +14,26 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>{% if page_title %}{{ page_title }} | {% endif %}1st Blackheath Scout Group</title>
     <script src="//unpkg.com/alpinejs" defer></script>
+    {% if env.environment != "development" %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="c62a7eb4-8fa5-44ac-b692-2fd1bf6dad6d"></script>
+    {% endif %}
   </head>
 
   <body class="text-stone-800 dark:bg-black dark:text-stone-200">
     {{ content | safe }}
+
+    {% if env.environment != "development" %}
+    <script type="text/javascript">
+      (() => {
+        const name = 'outbound-link-click';
+        document.querySelectorAll('a').forEach(a => {
+          if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+            a.setAttribute('data-umami-event', name);
+            a.setAttribute('data-umami-event-url', a.href);
+          }
+        });
+      })();
+    </script>
+    {% endif %}
   </body>
 </html>
