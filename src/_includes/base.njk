@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if meta_description %}<meta name="description" content="{{ meta_description }}">{% endif %}
     {% if no_robots %}<meta name="robots" content="noindex">{% endif %}
+    <meta name="theme-color" content="#28265c">
     <meta name="msapplication-TileColor" content="#8d8b12">
     {% if page.url %}<link rel="canonical" href="{{ urls.canonical_base_url }}{{ page.url }}">{% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/core.css' | url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +22,7 @@
     {% endif %}
   </head>
 
-  <body class="text-stone-800 dark:bg-black dark:text-stone-200">
+  <body>
     {{ content | safe }}
 
     {% if env.environment != "development" %}

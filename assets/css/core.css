@@ -1,11 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
 
 @tailwind base;
 
-body {
-  @apply font-body;
+@layer base {
+  /* Nothing in this system sits on white. */
+  body {
+    @apply font-body bg-paper text-bark-500 leading-relaxed tracking-body;
+  }
+
+  /* Always visible, never removed. */
+  :focus-visible {
+    @apply outline-none ring-[3px] ring-swamp/50 rounded-sm;
+  }
+
+  /* Keep Alpine-controlled panels hidden until Alpine boots. */
+  [x-cloak] {
+    display: none !important;
+  }
 }
 
 @tailwind components;
+
+@layer components {
+  /* The contour mark is a single centred composition, not a tile, so its
+     sizing is part of the class — never `bg-contour-*` on its own. */
+  .contour-light {
+    @apply bg-contour-light bg-cover bg-center bg-no-repeat;
+  }
+  .contour-dark {
+    @apply bg-contour-dark bg-cover bg-center bg-no-repeat;
+  }
+}
 
 @tailwind utilities;

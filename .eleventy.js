@@ -29,6 +29,11 @@ module.exports = function(eleventyConfig) {
     return md.render(content);
   });
 
+  // Raw text partials (headings pulled into a styled <h1>). Watched explicitly
+  // because .txt is not a template format, so --serve would otherwise ignore
+  // edits to them.
+  eleventyConfig.addWatchTarget('./src/_content/**/*.txt');
+
   return {
     dir: {
       input: 'src',

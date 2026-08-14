@@ -1,6 +1,7 @@
 - name: 1st Blackheath Scout Group
   url: /
-- name: Blue Mountains District
+- name: Greater Blue Mountains District
+  url: https://blue-mountains.district.scoutsnsw.com.au/home/
 - name: Greater Western Sydney
   url: https://www.greaterwestscouts.com.au
 - name: Scouts NSW

@@ -1,0 +1,48 @@
+<header class="sticky top-0 z-40 bg-card shadow-sm" x-data="{ open: false }">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-7 lg:px-10">
+    <a class="inline-block leading-none" href="/">
+      <img class="h-10 w-auto lg:h-14" alt="1st Blackheath Scout Group" src="/assets/img/1stBlackheath-horizontal-468x100.png">
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex lg:gap-8">
+      {%- for item in menu_items %}
+      {%- set current = item.href != '/' and page.url.startsWith(item.href) %}
+      <a class="border-b-2 pb-[3px] text-sm font-black tracking-tight no-underline hover:text-scarf-blue lg:text-md
+                {{ 'border-scarf-red text-scarf-blue' if current else 'border-transparent text-bark-500' }}"
+         href="{{ item.href }}"
+         {% if current %}aria-current="page"{% endif %}
+         {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+
+  <div class="h-[9px] w-full bg-scarf" aria-hidden="true"></div>
+
+  <button type="button"
+          class="fixed right-5 top-[18px] z-[60] inline-flex h-[46px] w-[46px] items-center justify-center rounded-control border border-b-2 border-bark-100 bg-card p-0 shadow-sm md:hidden"
+          :aria-expanded="open"
+          :aria-label="open ? 'Close menu' : 'Open menu'"
+          @click="open = !open">
+    <span class="relative block h-4 w-[22px]">
+      <i class="absolute left-0 top-0 block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && 'translate-y-[6.75px] rotate-45'"></i>
+      <i class="absolute left-0 top-[6.75px] block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && 'opacity-0'"></i>
+      <i class="absolute left-0 top-[13.5px] block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && '-translate-y-[6.75px] -rotate-45'"></i>
+    </span>
+  </button>
+
+  <div x-show="open" x-cloak
+       class="fixed inset-0 z-50 overflow-y-auto bg-navy px-5 pb-10 pt-24 sm:px-7 md:hidden"
+       role="dialog" aria-modal="true" aria-label="Menu">
+    <nav class="mx-auto flex max-w-lg flex-col">
+      {%- for item in menu_items %}
+      {%- set current = item.href != '/' and page.url.startsWith(item.href) %}
+      <a class="flex min-h-[56px] items-center border-b border-white/[0.14] text-lg font-black tracking-tight no-underline hover:text-sand
+                {{ 'pl-4 text-eucalypt-light shadow-[inset_3px_0_0_#8a1113]' if current else 'text-white' }}"
+         href="{{ item.href }}"
+         {% if current %}aria-current="page"{% endif %}
+         {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+         @click="open = false">{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>

@@ -1,5 +1,5 @@
 ---
-layout: page-standard
+layout: page
 page_title: Adult Volunteering
 date: Last Modified
 
@@ -8,28 +8,31 @@ meta_description: |
   that makes a real difference to children's lives. Full training and
   support provided.
 ---
+{% import "component/ui.njk" as ui with context %}
 
-<section class="bg-scarf-blue dark:bg-slate-800 py-24">
-  <div class="container mx-auto px-4 sm:px-12">
-    <div class="mx-auto prose md:prose-lg prose-invert max-w-3xl
-                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                prose-p:text-stone-100 dark:prose-p:text-stone-200
-                prose-a:font-bold hover:prose-a:text-scarf-red prose-a:underline">
-      {% markdown %}{% include "./_content/volunteering/volunteering.md" %}{% endmarkdown %}
-      <noscript>
-        <div class="not-prose">
-          <div class="text-center">
-          <a href="{{ urls.seek_volunteer }}" class="block inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">
-            See our current volunteering opportunities on SEEK Volunteer
-          </a>
-          </div>
-        </div>
-      </noscript>
+<section class="relative flex min-h-[clamp(330px,46vh,420px)] items-end overflow-hidden bg-navy">
+  <img class="absolute inset-0 h-full w-full object-cover" alt="" src="/assets/img/patrol-camp-944x680.jpg">
+  <div class="absolute inset-0 bg-veil"></div>
+  <div class="relative mx-auto w-full max-w-6xl pb-10 pt-14 text-white lg:pb-12 lg:pt-16 {{ ui.gutter | safe }}">
+    <div class="mb-3 text-sm font-black uppercase tracking-caps text-eucalypt-light">1st Blackheath Scout Group</div>
+    <h1 class="mb-4 max-w-[18ch] text-4xl font-black leading-tight tracking-display text-white">{% filter trim %}{% include "./_content/volunteering/heading.txt" %}{% endfilter %}</h1>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {{ ui.button("See our opportunities on SEEK Volunteer", urls.seek_volunteer, "onDarkOutline",
+                   attrs='target="_blank" rel="noopener noreferrer"') }}
     </div>
   </div>
 </section>
 
-<section class="container mx-auto px-4 sm:px-12 py-12">
-  <script src="https://widget.volunteer.com.au/au/main.js" data-vw-id="a9353fef-4317-46f6-8351-3877ffa912db" async></script>
-  <div data-vw="search-results"  data-load-results-on-init=true>Loading...</div>
+<section class="bg-paper contour-light {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl {{ ui.proseLead | safe }}">
+    {% markdown %}{% include "./_content/volunteering/volunteering.md" %}{% endmarkdown %}
+  </div>
+</section>
+
+<section class="bg-sand {{ ui.band | safe }}">
+  <div class="mx-auto max-w-6xl">
+    <script src="https://widget.volunteer.com.au/au/main.js" data-vw-id="a9353fef-4317-46f6-8351-3877ffa912db" async></script>
+    <div class="rounded-card border border-bark-100 border-b-2 border-b-bark-200 bg-card p-6 shadow-sm"
+         data-vw="search-results" data-load-results-on-init=true>Loading&hellip;</div>
+  </div>
 </section>

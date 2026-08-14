@@ -1,0 +1,168 @@
+{#
+  Import `with context` so that rendered Markdown files receive page context.
+#}
+
+{# --- Button --------------------------------------------------------------- #}
+{% macro button(label, href=none, variant="primary", size="md", block=false, attrs="") %}
+  {%- set base = "inline-flex items-center justify-center gap-2 rounded-control border-2 font-black tracking-tight leading-[1.1] text-center no-underline transition duration-150 ease-standard active:translate-y-0.5 active:shadow-none" -%}
+  {%- set sizes = {
+    sm: "px-[18px] py-2 text-sm",
+    md: "px-7 py-[13px] text-base",
+    lg: "px-[38px] py-[17px] text-md"
+  } -%}
+  {%- set variants = {
+    primary: "border-transparent bg-scarf-blue text-white shadow-edge hover:bg-scarf-blue-dark hover:text-white",
+    secondary: "border-navy bg-transparent text-navy hover:bg-navy hover:text-white",
+    onDark: "border-transparent bg-white text-navy shadow-edge-light hover:bg-sand hover:text-navy",
+    onDarkOutline: "border-white/70 bg-transparent text-white hover:bg-white/[0.14] hover:border-white hover:text-white"
+  } -%}
+  {%- set classes = base ~ " " ~ sizes[size] ~ " " ~ variants[variant] ~ (" flex w-full" if block else "") -%}
+  {%- if href -%}
+  <a class="{{ classes }}" href="{{ href }}" {{ attrs | safe }}>{{ label }}</a>
+  {%- else -%}
+  <button type="submit" class="{{ classes }}" {{ attrs | safe }}>{{ label }}</button>
+  {%- endif -%}
+{% endmacro %}
+
+{# --- Photo figure --------------------------------------------------------- #}
+{% macro photo(src, alt="", caption=none, ratio="16/9", classes="") %}
+  {%- set ratios = {
+    "16/9": "aspect-[16/9]",
+    "16/10": "aspect-[16/10]",
+    "4/3": "aspect-[4/3]",
+    "3/2": "aspect-[3/2]"
+  } -%}
+  <figure class="m-0 {{ classes }}">
+    <img class="w-full {{ ratios[ratio] }} object-cover rounded-card" alt="{{ alt }}" src="{{ src }}">
+    {%- if caption %}
+    <figcaption class="mt-2 text-sm font-light italic text-bark-400">{{ caption }}</figcaption>
+    {%- endif %}
+  </figure>
+{% endmacro %}
+
+{# --- Callout --------------------------------------------------------------
+   `path` is relative to src/_content/. The body is rendered here rather than
+   passed through `{% call %}`, because an Eleventy paired shortcode inside a
+   `{% call %}` block fails to compile. Inside a `{% macro %}` it is fine. #}
+{% macro callout(title, path, tone="info") %}
+  {%- set tones = {
+    info: "bg-info-surface border-t-info",
+    success: "bg-success-surface border-t-success",
+    warning: "bg-warning-surface border-t-warning",
+    danger: "bg-danger-surface border-t-danger"
+  } -%}
+  {%- set titleTones = {
+    info: "text-nsw-deep",
+    success: "text-scout-deep",
+    warning: "text-cub-deep",
+    danger: "text-rover-deep"
+  } -%}
+  <div class="rounded-md border-t-[3px] px-5 py-4 {{ tones[tone] }}">
+    {%- if title %}
+    <div class="mb-1 font-black tracking-tight {{ titleTones[tone] }}">{{ title }}</div>
+    {%- endif %}
+    {# prose so Markdown bodies keep their links and paragraph rhythm; preflight
+       would otherwise strip an <a> back to inherited colour and no underline. #}
+    <div class="prose prose-sm prose-p:text-bark-700 [&>*:last-child]:mb-0">{% markdown %}{% include "../../_content/" + path %}{% endmarkdown %}</div>
+  </div>
+{% endmacro %}
+
+{# --- Section card ---------------------------------------------------------
+   The Section accent is a 5px rule across the top, never a coloured left
+   border. Keyed by `section.img`, the slug sections.yaml already carries.
+   `group` is the fallback for cards that belong to no one Section. #}
+{% set sectionThemes = {
+  joeys:     { border: "border-t-joey",      text: "text-joey-deep",      rule: "bg-joey",      hover: "group-hover:text-joey-deep" },
+  cubs:      { border: "border-t-cub",       text: "text-cub-deep",       rule: "bg-cub",       hover: "group-hover:text-cub-deep" },
+  scouts:    { border: "border-t-scout",     text: "text-scout-deep",     rule: "bg-scout",     hover: "group-hover:text-scout-deep" },
+  venturers: { border: "border-t-venturer",  text: "text-venturer-deep",  rule: "bg-venturer",  hover: "group-hover:text-venturer-deep" },
+  rovers:    { border: "border-t-rover",     text: "text-rover-deep",     rule: "bg-rover",     hover: "group-hover:text-rover-deep" },
+  group:     { border: "border-t-eucalypt",  text: "text-eucalypt",       rule: "bg-eucalypt",  hover: "group-hover:text-eucalypt" }
+} %}
+{% macro sectionCard(section, href=none) %}
+  {%- set theme = sectionThemes[section.img] -%}
+<div class="flex flex-col items-center gap-3 p-6 text-center bg-card contour-light rounded-card border border-bark-100 border-b-2 border-b-bark-200 border-t-[5px] {{ theme.border }} shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition duration-200 ease-standard">
+  <img class="h-32 w-auto" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
+  <div class="font-black text-md tracking-tight {{ theme.text }}">{{ section.ages }}</div>
+  <div class="h-[3px] w-7 rounded-sm {{ theme.rule }}"></div>
+  <div>
+    <div class="mb-0.5 text-2xs font-black uppercase tracking-caps text-bark-400">Meets</div>
+    <div class="font-bold text-bark-700">{{ section.day }}</div>
+    <div class="text-sm">{{ section.time }}</div>
+  </div>
+  <div>
+    <div class="mb-0.5 text-2xs font-black uppercase tracking-caps text-bark-400">Leaders</div>
+    {%- for leader in section.leaders %}
+    <div class="text-sm">{{ leader }}</div>
+    {%- endfor %}
+  </div>
+  {%- if href %}
+  <a class="mt-auto pt-2 text-sm font-black no-underline hover:underline decoration-2 {{ theme.text }}" href="{{ href }}">Free Trial &rarr;</a>
+  {%- endif %}
+</div>
+{% endmacro %}
+
+{# --- Contact card --------------------------------------------------------- #}
+{% macro contactCard(contact) %}
+<div class="flex items-center gap-4 p-4 bg-card rounded-card border border-bark-100 border-b-2 border-b-bark-200">
+  <div class="flex w-14 shrink-0 justify-center">
+    <img class="h-12 w-auto" src="{{ contact.image }}" alt="">
+  </div>
+  <div>
+    {%- if contact.email %}
+    <a class="block font-black tracking-tight text-eucalypt no-underline hover:underline decoration-2 hover:text-ironbark" href="mailto:{{ contact.email }}">{{ contact.position }}</a>
+    {%- else %}
+    <span class="block font-black tracking-tight text-navy">{{ contact.position }}</span>
+    {%- endif %}
+    <div class="text-sm">{{ contact.name }}</div>
+  </div>
+</div>
+{% endmacro %}
+
+{# --- Option row -----------------------------------------------------------
+   A card whose whole face is one link. Used for the registration choices.
+   Given a `theme` — a `sectionThemes` key — it wears the contour, top rule and
+   text colour of a `sectionCard`; without one it stays plain.
+   Its `{% call %}` body must stay plain markup — see the note on `callout`. #}
+{% macro option(title, href, image=none, theme=none) %}
+  {%- set t = sectionThemes[theme] -%}
+<a class="group relative flex items-center gap-5 px-6 py-5 bg-card rounded-card border border-bark-100 border-b-2 border-b-bark-200 shadow-sm no-underline hover:shadow-lg hover:-translate-y-0.5 transition duration-200 ease-standard {{ ('contour-light border-t-[5px] ' ~ t.border) if t }}" href="{{ href }}">
+  {%- if image %}
+  <div class="flex w-16 shrink-0 justify-center">
+    <img class="h-14 w-auto" src="{{ image }}" alt="">
+  </div>
+  {%- endif %}
+  <div class="flex-1">
+    <h3 class="m-0 text-lg font-black tracking-display {{ t.text if t else 'text-eucalypt group-hover:text-ironbark' }}">{{ title }}</h3>
+    <div class="mt-1 text-bark-500">{{ caller() }}</div>
+  </div>
+  <div class="shrink-0 text-xl font-black leading-none text-bark-400 {{ t.hover if t else 'group-hover:text-eucalypt' }}">&rsaquo;</div>
+</a>
+{% endmacro %}
+
+{# --- Form field ----------------------------------------------------------- #}
+{% macro field(label, name, type="text", hint=none, rows=0, autocomplete=none, span=1) %}
+<div class="flex flex-col gap-2 {{ 'sm:col-span-2' if span == 2 }}">
+  <label class="text-sm font-black tracking-tight text-navy" for="{{ name }}">{{ label }}</label>
+  {%- set control = "w-full rounded-field border border-bark-200 bg-white px-[13px] py-[11px] text-base text-bark-700 placeholder:text-bark-300 focus:border-swamp focus:ring-[3px] focus:ring-swamp/50 focus:outline-none" -%}
+  {%- if rows %}
+  <textarea class="{{ control }} resize-y leading-normal" name="{{ name }}" id="{{ name }}" rows="{{ rows }}"></textarea>
+  {%- else %}
+  <input class="{{ control }}" type="{{ type }}" name="{{ name }}" id="{{ name }}" {% if autocomplete %}autocomplete="{{ autocomplete }}"{% endif %}>
+  {%- endif %}
+  {%- if hint %}
+  <div class="text-xs font-light text-bark-400">{{ hint }}</div>
+  {%- endif %}
+</div>
+{% endmacro %}
+
+{# --- Layout --------------------------------------------------------------- #}
+{% set band = "px-5 py-11 sm:px-7 sm:py-14 lg:px-10 lg:py-20" %}
+{% set gutter = "px-5 sm:px-7 lg:px-10" %}
+
+{# --- Prose ----------------------------------------------------------------
+   Class strings for rendered Markdown. `lead` gives the opening paragraph of
+   a block the larger size the design uses to open a section. #}
+{% set prose = "prose" %}
+{% set proseLead = "prose [&>p:first-of-type]:text-md" %}
+{% set proseInvert = "prose prose-invert [&>p:first-of-type]:text-md" %}

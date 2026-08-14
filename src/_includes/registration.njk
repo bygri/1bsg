@@ -1,0 +1,45 @@
+---
+layout: page
+---
+{#
+  Body of the New and Renew membership pages, which differ only in the content
+  they render and the URLs the cards point at. Each page supplies `mode`
+  ("new" or "renew") plus the two adult blurbs, whose wording differs by more
+  than that stem, and has no body of its own — `content` is deliberately unused.
+  Content files: _content/register/{mode}{,-youth,-adult}.md
+#}
+{% import "component/ui.njk" as ui with context %}
+
+<section class="bg-sand contour-light {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl {{ ui.proseLead | safe }}">
+    {% markdown %}{% include "../_content/register/" + mode + ".md" %}{% endmarkdown %}
+  </div>
+</section>
+
+<section class="bg-paper {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl">
+    <div class="{{ ui.prose | safe }}">
+      {% markdown %}{% include "../_content/register/" + mode + "-youth.md" %}{% endmarkdown %}
+    </div>
+    <div class="my-6">{{ ui.callout("Please note", "register/fees-notice.md", "warning") }}</div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {%- for section in sections %}
+      {% call ui.option(section.name, section[mode + "_url"], section.small_img, section.img) %}
+        {{ section.ages }}<br>{{ section.day }} {{ section.time }}
+      {% endcall %}
+      {%- endfor %}
+    </div>
+
+    <div class="{{ ui.prose | safe }} mb-8 mt-16">
+      {% markdown %}{% include "../_content/register/" + mode + "-adult.md" %}{% endmarkdown %}
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {% call ui.option("Leader", "/register/" + mode + "/leader/", "/assets/img/contact/group-128.png", "group") %}
+        {{ leaderBlurb }}
+      {% endcall %}
+      {% call ui.option("Adult Helper", "/register/" + mode + "/adult/", "/assets/img/contact/support-128.png", "group") %}
+        {{ helperBlurb }}
+      {% endcall %}
+    </div>
+  </div>
+</section>

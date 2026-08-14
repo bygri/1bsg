@@ -1,0 +1,41 @@
+{% set link = "text-eucalypt-light no-underline hover:text-white hover:underline decoration-2" %}
+<footer class="bg-navy px-5 pb-8 pt-14 text-white/[0.78] sm:px-7 lg:px-10 lg:pt-16">
+  <div class="mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-12">
+    <div>
+      <img class="h-11 w-auto" alt="1st Blackheath Scout Group" src="/assets/img/1stBlackheath-horizontal-invert-468x100.png">
+      <ol class="m-0 mt-6 flex list-none flex-wrap gap-x-3 gap-y-2 p-0 text-xs">
+        {%- for unit in organisation %}
+        <li class="flex gap-3">
+          {%- if unit.url %}
+          <a class="{{ link }}" href="{{ unit.url }}" {% if unit.url.startsWith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ unit.name }}</a>
+          {%- else %}
+          <span>{{ unit.name }}</span>
+          {%- endif %}
+          {%- if not loop.last %}<span class="opacity-40" aria-hidden="true">&rsaquo;</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+
+    <div>
+      <h5 class="mb-3 text-sm font-black uppercase tracking-caps text-white">Group</h5>
+      <ul class="m-0 flex list-none flex-col gap-2 p-0 text-sm">
+        <li><a class="{{ link }}" href="/login/" target="_blank" rel="noopener noreferrer">Member login</a></li>
+        <li><a class="{{ link }}" href="https://portal.revolutionise.com.au/1st-blackheath">Administrator login</a></li>
+      </ul>
+    </div>
+
+    <div class="flex items-start gap-5 md:justify-end">
+      <img class="h-24 w-auto" alt="1st Blackheath Scout Group Centenary badge" src="/assets/img/badge-256.png">
+      <img class="h-24 w-auto" alt="Logo of World Scouting" src="/assets/img/world-scouting-logo-128.png">
+    </div>
+  </div>
+
+  <div class="mx-auto mt-12 flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/[0.14] pt-5 text-xs">
+    <span>
+      This work is marked with <a class="{{ link }}" href="http://creativecommons.org/publicdomain/zero/1.0" target="_blank" rel="license noopener noreferrer">CC0 1.0</a>.
+      Source on <a class="{{ link }}" href="https://github.com/bygri/1bsg/" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </span>
+    <span>Last updated {{ page.date|shortDate }}.</span>
+  </div>
+</footer>

@@ -1,5 +1,5 @@
 ---
-layout: page-standard
+layout: page
 page_title: Hall Hire
 date: Last Modified
 
@@ -8,154 +8,122 @@ meta_description: |
   Upper Blue Mountains, book the 1st Blackheath Scout Hall for your
   venue needs.
 ---
+{% import "component/ui.njk" as ui with context %}
 
-<section class="bg-lime-800 dark:bg-stone-900 py-24">
-  <div class="container mx-auto px-4 sm:px-12">
-    <div class="mx-auto prose md:prose-lg prose-invert max-w-3xl
-                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                prose-p:text-stone-100 dark:prose-p:text-stone-200
-                prose-a:font-bold hover:prose-a:text-scarf-red prose-a:underline">
+<section class="relative flex min-h-[clamp(340px,48vh,440px)] items-end overflow-hidden bg-navy">
+  <img class="absolute inset-0 h-full w-full object-cover" alt="" src="/assets/img/hall-hero.jpg">
+  <div class="absolute inset-0 bg-veil"></div>
+  <div class="relative mx-auto w-full max-w-6xl pb-10 pt-14 text-white lg:pb-12 lg:pt-16 {{ ui.gutter | safe }}">
+    <div class="mb-3 text-sm font-black uppercase tracking-caps text-eucalypt-light">2 Park Lane, Blackheath</div>
+    <h1 class="mb-4 max-w-[18ch] text-4xl font-black leading-tight tracking-display text-white">{% filter trim %}{% include "../_content/hallhire/heading.txt" %}{% endfilter %}</h1>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {{ ui.button("Make a booking inquiry", "#inquiry", "onDark") }}
+    </div>
+  </div>
+</section>
+
+<section class="bg-paper contour-light {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl">
+    <div class="{{ ui.proseLead | safe }}">
       {% markdown %}{% include "../_content/hallhire/hallhire.md" %}{% endmarkdown %}
-      <div class="not-prose">
-        <a href="/hall-hire/#inquiry" class="inline-flex items-center px-3 py-1 rounded text-white border border-white dark:border-stone-200 transition duration-150 hover:bg-white dark:hover:bg-stone-200 hover:text-scarf-red">Make a booking inquiry</a>
-      </div>
+    </div>
+    <div class="my-6">{{ ui.callout("Please note", "hallhire/notice.md", "warning") }}</div>
+    <div class="{{ ui.prose | safe }}">
+      {% markdown %}{% include "../_content/hallhire/location.md" %}{% endmarkdown %}
     </div>
   </div>
 </section>
 
-<section class="bg-stone-100 dark:bg-stone-900 py-24">
-  <div class="container mx-auto px-4 sm:px-12 mb-12">
-    <figure class="bg-lime-800 text-stone-100 dark:text-stone-200 rounded-md">
-      <img class="block w-full rounded-t" alt="{{ hallhire.hero_photo.alt }}" src="{{ hallhire.hero_photo.url }}">
-      <figcaption class="text-center text-lg px-3 py-2">{{ hallhire.hero_photo.caption }}</figcaption>
-    </figure>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-      {% for photo in hallhire.photos %}
-      <figure class="bg-lime-800 text-stone-100 dark:text-stone-200 rounded-md">
-        <img class="block w-full rounded-t" alt="{{ photo.alt }}" src="{{ photo.url }}">
-        <figcaption class="text-center text-lg px-3 py-2">{{ photo.caption }}</figcaption>
-      </figure>
-      {% endfor %}
+<section class="bg-sand {{ ui.band | safe }}">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-navy">The Hall</h2>
+    {{ ui.photo(hallhire.hero_photo.url, hallhire.hero_photo.alt, hallhire.hero_photo.caption, "16/9") }}
+    <div class="mt-8 grid gap-8 sm:grid-cols-2">
+      {%- for photo in hallhire.photos %}
+      {{ ui.photo(photo.url, photo.alt, photo.caption, "3/2") }}
+      {%- endfor %}
     </div>
+  </div>
+</section>
 
-    <div class="mx-auto mt-24 bg-white dark:bg-stone-800 rounded-md p-8">
-      <div class="mx-auto max-w-3xl">
-        <h1 class="text-3xl font-black tracking-tight leading-loose mb-6">Schedule of fees</h1>
-        <table class="min-w-full border border-stone-400 dark:border-stone-500">
-          {% for row in hallhire_rates %}
-          {% if loop.first %}
+<section class="bg-paper {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-navy">Schedule of fees</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[26rem] border-collapse tabular-nums">
+        <thead>
           <tr>
-            {% for value in row %}
-            <th class="py-3 px-2 w-1/3 border border-stone-400 dark:border-stone-500 text-center">{{ value }}</th>
-            {% endfor %}
+            {%- for value in hallhire_rates[0] %}
+            <th class="border-b-2 border-navy px-4 py-3 text-xs font-black uppercase tracking-caps {{ 'text-left text-bark-400' if loop.first else 'text-right text-navy' }}">{{ value }}</th>
+            {%- endfor %}
           </tr>
-          {% else %}
-          <tr>
-            {% for value in row %}
-            {% if loop.first %}
-            <th class="py-3 px-2 border border-stone-400 dark:border-stone-500 text-center">{{ value }}</th>
-            {% else %}
-            <td class="py-3 px-2 border border-stone-400 dark:border-stone-500 text-center">{{ value }}</td>
-            {% endif %}
-            {% endfor %}
+        </thead>
+        <tbody>
+          {%- for row in hallhire_rates.slice(1) %}
+          <tr class="{{ 'bg-sand' if loop.index0 is odd }}">
+            {%- for value in row %}
+            {%- if loop.first %}
+            <th class="border-b border-bark-100 px-4 py-3 text-left font-bold text-bark-700">{{ value }}</th>
+            {%- else %}
+            <td class="border-b border-bark-100 px-4 py-3 text-right">{{ value }}</td>
+            {%- endif %}
+            {%- endfor %}
           </tr>
-          {% endif %}
-          {% endfor %}
-        </table>
-      </div>
+          {%- endfor %}
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<section class="py-24">
-  <div class="container mx-auto px-4 sm:px-12 mb-12">
-    <div class="mx-auto max-w-3xl">
-      <h2 class="text-3xl font-black tracking-tight leading-loose mb-6">Upcoming Bookings</h2>
-      <p class="leading-loose mb-6">
-        Review the calendar below to see when our Hall is available for hire. For easier viewing, you can
-        <a class="font-bold text-scarf-blue hover:text-scarf-red dark:text-scarf-blue-light underline" href="{{ hallhire.calendar_url }}" target="_blank">open the calendar in a new window</a>.
-      </p>
-      <a href="/hall-hire/#inquiry" class="inline-flex items-center px-3 py-1 rounded shadow font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Make a booking inquiry</a>
+<section class="bg-sand {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="mb-4 max-w-[26ch] text-2xl font-black tracking-display text-navy">Upcoming bookings</h2>
+    <p>
+      Review our calendar to see when the Hall is available for hire, then send a booking inquiry and
+      the Hall Hire Officer will confirm availability with you.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {{ ui.button("Open the calendar in a new window", hallhire.calendar_url, "secondary", attrs='target="_blank" rel="noopener noreferrer"') }}
+      {{ ui.button("Make a booking inquiry", "#inquiry") }}
     </div>
   </div>
-  <div class="p-4 max-w-[80rem] mx-auto">
-    <iframe class="rounded-lg border w-full h-[38rem]" src="{{ hallhire.calendar_url }}"></iframe>
+  <div class="mx-auto mt-10 max-w-7xl">
+    <iframe class="h-[38rem] w-full rounded-card border border-bark-200" title="1st Blackheath Scout Hall booking calendar" src="{{ hallhire.calendar_url }}"></iframe>
   </div>
 </section>
 
-<section class="bg-stone-100 dark:bg-stone-900 py-24" id="inquiry">
-  <div class="container mx-auto px-4 sm:px-12">
-    <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
-                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+<section id="inquiry" class="scroll-mt-24 bg-paper {{ ui.band | safe }}">
+  <div class="mx-auto max-w-2xl">
+    <div class="{{ ui.prose | safe }} mb-8">
       {% markdown %}{% include "../_content/hallhire/inquiry/intro.md" %}{% endmarkdown %}
     </div>
-  </div>
-  <div class="mx-auto max-w-3xl mt-8">
+
     <form name="hallhire-inquiry" netlify action="/hall-hire/success/" method="POST">
       <input type="hidden" name="subject" data-remove-prefix value="Hall Hire Inquiry">
-      <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-        <div class="sm:col-span-2">
-          <label for="parent-name" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Your name</label>
-          <div class="mt-2.5">
-            <input type="text" name="parent-name" id="parent-name" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {{ ui.field("Your name", "parent-name", span=2) }}
+        {{ ui.field("Email", "email", type="email", autocomplete="email") }}
+        {{ ui.field("Phone", "phone", type="tel", autocomplete="tel") }}
+        {{ ui.field("Dates and times of booking", "dates", span=2) }}
+        {{ ui.field("Purpose of booking", "purpose", span=2) }}
+        {{ ui.field("Estimated number of people", "num-people", span=2) }}
+        {{ ui.field("Comments", "message", rows=5, span=2,
+                    hint="Please advise if you need any extra equipment such as tables and chairs or BBQ, and include quantities.") }}
+        <div class="mt-2 sm:col-span-2">
+          {{ ui.button("Send Inquiry", none, "primary", "lg", true) }}
         </div>
-        <div>
-          <label for="email" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Email</label>
-          <div class="mt-2.5">
-            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <label for="phone" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Phone</label>
-          <div class="mt-2.5">
-            <input type="tel" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div class="sm:col-span-2">
-          <label for="dates" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Dates and times of booking</label>
-          <div class="mt-2.5">
-            <input type="text" name="dates" id="dates" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div class="sm:col-span-2">
-          <label for="purpose" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Purpose of booking</label>
-          <div class="mt-2.5">
-            <input type="text" name="purpose" id="purpose" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div class="sm:col-span-2">
-          <label for="num-people" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Estimated number of people</label>
-          <div class="mt-2.5">
-            <input type="text" name="num-people" id="num-people" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div class="sm:col-span-2">
-          <label for="message" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Comments—please advise if you need any extra equipment such as tables and chairs or BBQ, and include quantities</label>
-          <div class="mt-2.5">
-            <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6"></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="mt-10">
-        <button type="submit" class="block w-full items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Send Inquiry</button>
       </div>
     </form>
   </div>
 </section>
 
-<section class="py-24">
-  <div class="container mx-auto px-4 sm:px-12 mb-12">
-    <div class="mx-auto max-w-3xl">
-      <div class="border border-[#89074F] rounded px-4 py-3 space-y-2">
-        <img class="w-48" src="/assets/img/bendigo-bank-300x52.png" alt="Bendigo Bank logo">
-        <div class="prose md:prose-lg prose-stone dark:prose-invert
-                    prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                    prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
-          {% markdown %}{% include "../_content/hallhire/bendigo.md" %}{% endmarkdown %}
-        </div>
+<section class="bg-paper {{ ui.gutter | safe }} pb-11 sm:pb-14 lg:pb-20">
+  <div class="mx-auto max-w-4xl">
+    <div class="rounded-card border border-bark-100 border-b-2 border-b-bark-200 bg-card p-6 shadow-sm">
+      <img class="mb-3 block h-[34px] w-auto" alt="Bendigo Bank" src="/assets/img/bendigo-bank-300x52.png">
+      <div class="{{ ui.prose | safe }} prose-p:mb-0">
+        {% markdown %}{% include "../_content/hallhire/bendigo.md" %}{% endmarkdown %}
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 ---
-layout: page-standard
+layout: page
 page_title: Youth Inquiry
 date: Last Modified
 
@@ -7,51 +7,31 @@ meta_description: |
   Scouting is about fun, friends, adventure and so much more. Inquire now for
   your free 4 week trial.
 ---
+{% import "component/ui.njk" as ui with context %}
 
-<section class="bg-stone-100 dark:bg-stone-800 py-24">
-  <div class="container mx-auto px-4 sm:px-12">
-    <div class="mx-auto prose md:prose-lg prose-stone dark:prose-invert max-w-3xl
-                prose-headings:font-black prose-headings:tracking-tight prose-strong:font-bold
-                prose-a:font-bold prose-a:text-scarf-blue hover:prose-a:text-scarf-red dark:prose-a:text-scarf-blue-light prose-a:underline">
+<section class="bg-sand contour-light {{ ui.band | safe }}">
+  <div class="mx-auto max-w-4xl">
+    <div class="{{ ui.proseLead | safe }}">
       {% markdown %}{% include "../_content/youth-inquiry/intro.md" %}{% endmarkdown %}
     </div>
+    <div class="mt-6">{{ ui.callout("Please make contact first", "youth-inquiry/notice.md", "warning") }}</div>
   </div>
 </section>
 
-<section class="container mx-auto px-4 sm:px-12 py-24 space-y-24">
-  <div class="mx-auto max-w-xl">
+<section class="bg-paper {{ ui.band | safe }}">
+  <div class="mx-auto max-w-2xl">
     <form name="youth-inquiry" netlify action="/youth-inquiry/success/" method="POST">
       <input type="hidden" name="subject" data-remove-prefix value="Youth Inquiry">
-      <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-        <div class="sm:col-span-2">
-          <label for="parent-name" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Your name</label>
-          <div class="mt-2.5">
-            <input type="text" name="parent-name" id="parent-name" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        {{ ui.field("Your name", "parent-name", span=2) }}
+        {{ ui.field("Email", "email", type="email", autocomplete="email") }}
+        {{ ui.field("Phone", "phone", type="tel", autocomplete="tel") }}
+        {{ ui.field("Message", "message", rows=5, span=2,
+                    hint="Please include your children's full names and ages.") }}
+        <div class="mt-2 sm:col-span-2">
+          {{ ui.button("Send Inquiry", none, "primary", "lg", true) }}
         </div>
-        <div>
-          <label for="email" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Email</label>
-          <div class="mt-2.5">
-            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div>
-          <label for="phone" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Phone</label>
-          <div class="mt-2.5">
-            <input type="tel" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6">
-          </div>
-        </div>
-        <div class="sm:col-span-2">
-          <label for="message" class="block text-sm font-semibold leading-6 text-stone-900 dark:text-stone-300">Message—please include child full names and ages</label>
-          <div class="mt-2.5">
-            <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 py-2 px-3.5 bg-white dark:bg-black text-stone-900 dark:text-stone-300 shadow-sm ring-1 ring-inset ring-stone-300 dark:ring-stone-500 placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-scarf-blue sm:text-sm sm:leading-6"></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="mt-10">
-        <button type="submit" class="block w-full items-center px-5 py-3 rounded-lg shadow-md font-medium text-lg text-white dark:text-stone-200 bg-scarf-blue hover:bg-scarf-red dark:bg-scarf-blue-dark transition duration-150">Send Inquiry</button>
       </div>
     </form>
   </div>
-
 </section>
