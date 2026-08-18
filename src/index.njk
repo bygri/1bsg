@@ -10,8 +10,8 @@ meta_description: |
 ---
 {% import "component/ui.njk" as ui with context %}
 
-<section class="relative flex min-h-[clamp(420px,62vh,560px)] items-end overflow-hidden bg-navy">
-  <img class="absolute inset-0 h-full w-full object-cover" alt="" src="/assets/img/hero-lookout-1920x1080.jpg">
+<section class="relative flex min-h-[clamp(420px,62vh,560px)] items-end overflow-hidden bg-hero">
+  <img class="absolute inset-0 h-full w-full object-cover photo-dim-hero" alt="" src="/assets/img/hero-lookout-1920x1080.jpg">
   <div class="absolute inset-0 bg-veil"></div>
   <div class="relative mx-auto w-full max-w-6xl pb-10 pt-14 text-white lg:pb-12 lg:pt-16 {{ ui.gutter | safe }}">
     <div class="mb-3 text-sm font-black uppercase tracking-caps text-eucalypt-light">Upper Blue Mountains</div>
@@ -61,7 +61,7 @@ meta_description: |
   </div>
 </section>
 
-<section id="volunteer" class="bg-eucalypt contour-dark {{ ui.band | safe }}">
+<section id="volunteer" class="bg-band contour-dark {{ ui.band | safe }}">
   <div class="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-12">
     <div class="{{ ui.proseInvert | safe }} prose-h1:text-2xl">
       {% markdown %}{% include "./_content/index/adult-volunteering.md" %}{% endmarkdown %}
@@ -89,7 +89,7 @@ meta_description: |
 
 <section id="contact" class="bg-sand {{ ui.band | safe }}">
   <div class="mx-auto max-w-6xl">
-    <h2 class="mb-4 max-w-[26ch] text-2xl font-black tracking-display text-navy">Contacts</h2>
+    <h2 class="mb-4 max-w-[26ch] text-2xl font-black tracking-display text-ink">Contacts</h2>
 
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {%- for contact in contacts %}
@@ -100,7 +100,7 @@ meta_description: |
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {%- for content in contacts_extras %}
       <div>
-        <h3 class="mb-2 text-md font-black tracking-display text-navy">{{ content.title }}</h3>
+        <h3 class="mb-2 text-md font-black tracking-display text-ink">{{ content.title }}</h3>
         <p class="mb-0">{{ content.body|safe }}</p>
       </div>
       {%- endfor %}

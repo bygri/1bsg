@@ -1,14 +1,15 @@
 <header class="sticky top-0 z-40 bg-card shadow-sm" x-data="{ open: false }">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-7 lg:px-10">
     <a class="inline-block leading-none" href="/">
-      <img class="h-10 w-auto lg:h-14" alt="1st Blackheath Scout Group" src="/assets/img/1stBlackheath-horizontal-468x100.png">
+      <img class="h-10 w-auto lg:h-14 dark:hidden" alt="1st Blackheath Scout Group" src="/assets/img/1stBlackheath-horizontal-468x100.png">
+      <img class="hidden h-10 w-auto lg:h-14 dark:block" alt="1st Blackheath Scout Group" src="/assets/img/1stBlackheath-horizontal-invert-468x100.png">
     </a>
 
     <nav class="hidden items-center gap-6 md:flex lg:gap-8">
       {%- for item in menu_items %}
       {%- set current = item.href != '/' and page.url.startsWith(item.href) %}
-      <a class="border-b-2 pb-[3px] text-sm font-black tracking-tight no-underline hover:text-scarf-blue lg:text-md
-                {{ 'border-scarf-red text-scarf-blue' if current else 'border-transparent text-bark-500' }}"
+      <a class="border-b-2 pb-[3px] text-sm font-black tracking-tight no-underline hover:text-action lg:text-md
+                {{ 'border-scarf-red text-action' if current else 'border-transparent text-bark-500' }}"
          href="{{ item.href }}"
          {% if current %}aria-current="page"{% endif %}
          {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.title }}</a>
@@ -16,6 +17,7 @@
     </nav>
   </div>
 
+  {# The scarf. Unchanged in dark mode — it is how the page signs itself. #}
   <div class="h-[9px] w-full bg-scarf" aria-hidden="true"></div>
 
   <button type="button"
@@ -24,12 +26,14 @@
           :aria-label="open ? 'Close menu' : 'Open menu'"
           @click="open = !open">
     <span class="relative block h-4 w-[22px]">
-      <i class="absolute left-0 top-0 block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && 'translate-y-[6.75px] rotate-45'"></i>
-      <i class="absolute left-0 top-[6.75px] block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && 'opacity-0'"></i>
-      <i class="absolute left-0 top-[13.5px] block h-[2.5px] w-full rounded-sm bg-navy transition duration-150 ease-standard" :class="open && '-translate-y-[6.75px] -rotate-45'"></i>
+      <i class="absolute left-0 top-0 block h-[2.5px] w-full rounded-sm bg-ink transition duration-150 ease-standard" :class="open && 'translate-y-[6.75px] rotate-45'"></i>
+      <i class="absolute left-0 top-[6.75px] block h-[2.5px] w-full rounded-sm bg-ink transition duration-150 ease-standard" :class="open && 'opacity-0'"></i>
+      <i class="absolute left-0 top-[13.5px] block h-[2.5px] w-full rounded-sm bg-ink transition duration-150 ease-standard" :class="open && '-translate-y-[6.75px] -rotate-45'"></i>
     </span>
   </button>
 
+  {# The mobile menu overlay stays navy in both themes: it is already a dark
+     surface with white type, and navy is the brand's anchor. #}
   <div x-show="open" x-cloak
        class="fixed inset-0 z-50 overflow-y-auto bg-navy px-5 pb-10 pt-24 sm:px-7 md:hidden"
        role="dialog" aria-modal="true" aria-label="Menu">

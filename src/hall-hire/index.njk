@@ -10,8 +10,8 @@ meta_description: |
 ---
 {% import "component/ui.njk" as ui with context %}
 
-<section class="relative flex min-h-[clamp(340px,48vh,440px)] items-end overflow-hidden bg-navy">
-  <img class="absolute inset-0 h-full w-full object-cover" alt="" src="/assets/img/hall-hero.jpg">
+<section class="relative flex min-h-[clamp(340px,48vh,440px)] items-end overflow-hidden bg-hero">
+  <img class="absolute inset-0 h-full w-full object-cover photo-dim-hero" alt="" src="/assets/img/hall-hero.jpg">
   <div class="absolute inset-0 bg-veil"></div>
   <div class="relative mx-auto w-full max-w-6xl pb-10 pt-14 text-white lg:pb-12 lg:pt-16 {{ ui.gutter | safe }}">
     <div class="mb-3 text-sm font-black uppercase tracking-caps text-eucalypt-light">2 Park Lane, Blackheath</div>
@@ -36,7 +36,7 @@ meta_description: |
 
 <section class="bg-sand {{ ui.band | safe }}">
   <div class="mx-auto max-w-6xl">
-    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-navy">The Hall</h2>
+    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-ink">The Hall</h2>
     {{ ui.photo(hallhire.hero_photo.url, hallhire.hero_photo.alt, hallhire.hero_photo.caption, "16/9") }}
     <div class="mt-8 grid gap-8 sm:grid-cols-2">
       {%- for photo in hallhire.photos %}
@@ -48,13 +48,13 @@ meta_description: |
 
 <section class="bg-paper {{ ui.band | safe }}">
   <div class="mx-auto max-w-4xl">
-    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-navy">Schedule of fees</h2>
+    <h2 class="mb-8 max-w-[26ch] text-2xl font-black tracking-display text-ink">Schedule of fees</h2>
     <div class="overflow-x-auto">
       <table class="w-full min-w-[26rem] border-collapse tabular-nums">
         <thead>
           <tr>
             {%- for value in hallhire_rates[0] %}
-            <th class="border-b-2 border-navy px-4 py-3 text-xs font-black uppercase tracking-caps {{ 'text-left text-bark-400' if loop.first else 'text-right text-navy' }}">{{ value }}</th>
+            <th class="border-b-2 border-ink px-4 py-3 text-xs font-black uppercase tracking-caps {{ 'text-left text-bark-400' if loop.first else 'text-right text-ink' }}">{{ value }}</th>
             {%- endfor %}
           </tr>
         </thead>
@@ -78,7 +78,7 @@ meta_description: |
 
 <section class="bg-sand {{ ui.band | safe }}">
   <div class="mx-auto max-w-4xl">
-    <h2 class="mb-4 max-w-[26ch] text-2xl font-black tracking-display text-navy">Upcoming bookings</h2>
+    <h2 class="mb-4 max-w-[26ch] text-2xl font-black tracking-display text-ink">Upcoming bookings</h2>
     <p>
       Review our calendar to see when the Hall is available for hire, then send a booking inquiry and
       the Hall Hire Officer will confirm availability with you.

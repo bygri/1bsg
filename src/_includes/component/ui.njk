@@ -11,9 +11,9 @@
     lg: "px-[38px] py-[17px] text-md"
   } -%}
   {%- set variants = {
-    primary: "border-transparent bg-scarf-blue text-white shadow-edge hover:bg-scarf-blue-dark hover:text-white",
-    secondary: "border-navy bg-transparent text-navy hover:bg-navy hover:text-white",
-    onDark: "border-transparent bg-white text-navy shadow-edge-light hover:bg-sand hover:text-navy",
+    primary: "border-transparent bg-action text-white shadow-edge hover:bg-action-hover hover:text-white",
+    secondary: "border-outline bg-transparent text-outline hover:bg-outline hover:text-outline-fg",
+    onDark: "border-transparent bg-white text-navy shadow-edge-light hover:bg-[#ebe4d6] hover:text-navy",
     onDarkOutline: "border-white/70 bg-transparent text-white hover:bg-white/[0.14] hover:border-white hover:text-white"
   } -%}
   {%- set classes = base ~ " " ~ sizes[size] ~ " " ~ variants[variant] ~ (" flex w-full" if block else "") -%}
@@ -24,7 +24,9 @@
   {%- endif -%}
 {% endmacro %}
 
-{# --- Photo figure --------------------------------------------------------- #}
+{# --- Photo figure ---------------------------------------------------------
+   `photo-dim` takes photography down slightly in dark mode so it stops
+   glaring off the dark ground. #}
 {% macro photo(src, alt="", caption=none, ratio="16/9", classes="") %}
   {%- set ratios = {
     "16/9": "aspect-[16/9]",
@@ -33,7 +35,7 @@
     "3/2": "aspect-[3/2]"
   } -%}
   <figure class="m-0 {{ classes }}">
-    <img class="w-full {{ ratios[ratio] }} object-cover rounded-card" alt="{{ alt }}" src="{{ src }}">
+    <img class="w-full {{ ratios[ratio] }} object-cover rounded-card photo-dim" alt="{{ alt }}" src="{{ src }}">
     {%- if caption %}
     <figcaption class="mt-2 text-sm font-light italic text-bark-400">{{ caption }}</figcaption>
     {%- endif %}
@@ -52,7 +54,7 @@
     danger: "bg-danger-surface border-t-danger"
   } -%}
   {%- set titleTones = {
-    info: "text-nsw-deep",
+    info: "text-note",
     success: "text-scout-deep",
     warning: "text-cub-deep",
     danger: "text-rover-deep"
@@ -70,19 +72,24 @@
 {# --- Section card ---------------------------------------------------------
    The Section accent is a 5px rule across the top, never a coloured left
    border. Keyed by `section.img`, the slug sections.yaml already carries.
-   `group` is the fallback for cards that belong to no one Section. #}
+   `group` is the fallback for cards that belong to no one Section.
+
+   The `border`/`rule` classes are the issued Section colours and do not move
+   in dark mode; only the `-deep` text shades do. #}
 {% set sectionThemes = {
   joeys:     { border: "border-t-joey",      text: "text-joey-deep",      rule: "bg-joey",      hover: "group-hover:text-joey-deep" },
   cubs:      { border: "border-t-cub",       text: "text-cub-deep",       rule: "bg-cub",       hover: "group-hover:text-cub-deep" },
   scouts:    { border: "border-t-scout",     text: "text-scout-deep",     rule: "bg-scout",     hover: "group-hover:text-scout-deep" },
   venturers: { border: "border-t-venturer",  text: "text-venturer-deep",  rule: "bg-venturer",  hover: "group-hover:text-venturer-deep" },
   rovers:    { border: "border-t-rover",     text: "text-rover-deep",     rule: "bg-rover",     hover: "group-hover:text-rover-deep" },
-  group:     { border: "border-t-eucalypt",  text: "text-eucalypt",       rule: "bg-eucalypt",  hover: "group-hover:text-eucalypt" }
+  group:     { border: "border-t-eucalypt",  text: "text-link",           rule: "bg-eucalypt",  hover: "group-hover:text-link" }
 } %}
 {% macro sectionCard(section, href=none) %}
   {%- set theme = sectionThemes[section.img] -%}
 <div class="flex flex-col items-center gap-3 p-6 text-center bg-card contour-light rounded-card border border-bark-100 border-b-2 border-b-bark-200 border-t-[5px] {{ theme.border }} shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition duration-200 ease-standard">
-  <img class="h-32 w-auto" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
+  {# The inverted Section marks already ship in /assets/img — swap, never recolour. #}
+  <img class="h-32 w-auto dark:hidden" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-220.png">
+  <img class="hidden h-32 w-auto dark:block" alt="{{ section.name }}" src="/assets/img/section-{{ section.img }}-invert-220.png">
   <div class="font-black text-md tracking-tight {{ theme.text }}">{{ section.ages }}</div>
   <div class="h-[3px] w-7 rounded-sm {{ theme.rule }}"></div>
   <div>
@@ -110,9 +117,9 @@
   </div>
   <div>
     {%- if contact.email %}
-    <a class="block font-black tracking-tight text-eucalypt no-underline hover:underline decoration-2 hover:text-ironbark" href="mailto:{{ contact.email }}">{{ contact.position }}</a>
+    <a class="block font-black tracking-tight text-link no-underline hover:underline decoration-2 hover:text-link-hover" href="mailto:{{ contact.email }}">{{ contact.position }}</a>
     {%- else %}
-    <span class="block font-black tracking-tight text-navy">{{ contact.position }}</span>
+    <span class="block font-black tracking-tight text-ink">{{ contact.position }}</span>
     {%- endif %}
     <div class="text-sm">{{ contact.name }}</div>
   </div>
@@ -133,18 +140,20 @@
   </div>
   {%- endif %}
   <div class="flex-1">
-    <h3 class="m-0 text-lg font-black tracking-display {{ t.text if t else 'text-eucalypt group-hover:text-ironbark' }}">{{ title }}</h3>
+    <h3 class="m-0 text-lg font-black tracking-display {{ t.text if t else 'text-link group-hover:text-link-hover' }}">{{ title }}</h3>
     <div class="mt-1 text-bark-500">{{ caller() }}</div>
   </div>
-  <div class="shrink-0 text-xl font-black leading-none text-bark-400 {{ t.hover if t else 'group-hover:text-eucalypt' }}">&rsaquo;</div>
+  <div class="shrink-0 text-xl font-black leading-none text-bark-400 {{ t.hover if t else 'group-hover:text-link' }}">&rsaquo;</div>
 </a>
 {% endmacro %}
 
-{# --- Form field ----------------------------------------------------------- #}
+{# --- Form field -----------------------------------------------------------
+   The control sits on `bg-card`, not `bg-white`: nothing in this system sits
+   on white, and a white field would be a hole punched in a dark page. #}
 {% macro field(label, name, type="text", hint=none, rows=0, autocomplete=none, span=1) %}
 <div class="flex flex-col gap-2 {{ 'sm:col-span-2' if span == 2 }}">
-  <label class="text-sm font-black tracking-tight text-navy" for="{{ name }}">{{ label }}</label>
-  {%- set control = "w-full rounded-field border border-bark-200 bg-white px-[13px] py-[11px] text-base text-bark-700 placeholder:text-bark-300 focus:border-swamp focus:ring-[3px] focus:ring-swamp/50 focus:outline-none" -%}
+  <label class="text-sm font-black tracking-tight text-ink" for="{{ name }}">{{ label }}</label>
+  {%- set control = "w-full rounded-field border border-bark-200 bg-card px-[13px] py-[11px] text-base text-bark-700 placeholder:text-bark-300 focus:border-swamp focus:ring-[3px] focus:ring-swamp/50 focus:outline-none" -%}
   {%- if rows %}
   <textarea class="{{ control }} resize-y leading-normal" name="{{ name }}" id="{{ name }}" rows="{{ rows }}"></textarea>
   {%- else %}

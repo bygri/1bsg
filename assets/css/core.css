@@ -3,6 +3,128 @@
 @tailwind base;
 
 @layer base {
+  /* ------------------------------------------------------------------
+     Theme tokens.
+
+     Channel triplets, not hex, so Tailwind's opacity modifiers keep
+     working: `text-bark-500/70`, `border-bark-100/50`.
+
+     What is NOT in here, on purpose: the scarf (#1a3b7f / #8a1113), the
+     five Section colours, the NSW palette and navy itself. Those are
+     brand constants — they stay hard coded in tailwind.config.js and do
+     not flip. Only surfaces, neutrals, and the *roles* that must stay
+     legible (ink, link, action, the `-deep` text shades) are tokens.
+     ------------------------------------------------------------------ */
+  :root {
+    /* surfaces */
+    --c-paper: 246 242 234;      /* #f6f2ea */
+    --c-sand: 235 228 214;       /* #ebe4d6 */
+    --c-card: 255 253 248;       /* #fffdf8 */
+    --c-sunken: 226 217 199;     /* #e2d9c7 */
+
+    /* warm neutrals */
+    --c-bark-100: 220 211 193;
+    --c-bark-200: 191 181 160;
+    --c-bark-300: 148 139 118;
+    --c-bark-400: 109 101 85;
+    --c-bark-500: 74 69 60;
+    --c-bark-700: 51 47 41;
+    --c-bark-900: 29 27 23;
+
+    /* roles */
+    --c-ink: 40 38 92;           /* navy — headings, labels */
+    --c-link: 0 103 75;          /* eucalypt */
+    --c-link-hover: 151 61 32;   /* ironbark */
+    --c-action: 26 59 127;       /* scarf blue */
+    --c-action-hover: 21 47 102;
+    --c-action-edge: 14 36 80;
+    --c-outline: 40 38 92;       /* secondary button border + label */
+    --c-outline-fg: 255 255 255; /* its label once filled */
+    --c-hero: 40 38 92;          /* ground behind the hero photograph */
+    --c-band: 0 103 75;          /* the big eucalypt band */
+    --c-footer: 40 38 92;
+    --c-eucalypt-light: 122 179 68;
+
+    /* Section text shades. The Section colours themselves never move; these
+       are the `-deep` shades used for *type*, which must stay legible. */
+    --c-joey-deep: 151 61 32;
+    --c-cub-deep: 148 106 40;
+    --c-scout-deep: 6 109 60;
+    --c-venturer-deep: 112 29 40;
+    --c-rover-deep: 154 35 32;
+
+    /* semantic surfaces + the one title colour that is not a Section shade */
+    --c-info-surface: 220 236 233;
+    --c-success-surface: 227 239 223;
+    --c-warning-surface: 246 233 201;
+    --c-danger-surface: 246 226 220;
+    --c-note: 0 107 158;         /* nsw.deep */
+
+    /* elevation — warm bark brown, hard offset before any blur */
+    --sh-xs: 0 1px 0 rgba(51, 47, 41, .10);
+    --sh-sm: 0 1px 0 rgba(51, 47, 41, .14), 0 1px 3px rgba(51, 47, 41, .07);
+    --sh-md: 0 2px 0 rgba(51, 47, 41, .16), 0 4px 10px rgba(51, 47, 41, .09);
+    --sh-lg: 0 3px 0 rgba(51, 47, 41, .18), 0 10px 22px rgba(51, 47, 41, .13);
+    --sh-xl: 0 4px 0 rgba(51, 47, 41, .20), 0 20px 40px rgba(51, 47, 41, .18);
+
+    --contour: url('/assets/img/contour-light.svg');
+  }
+
+  /* ------------------------------------------------------------------
+     Dark. A warm bark ground, not a neutral-grey or navy inversion —
+     the same escarpment palette after sundown.
+     ------------------------------------------------------------------ */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --c-paper: 23 21 17;       /* #171511 */
+      --c-sand: 32 29 23;        /* #201d17 */
+      --c-card: 35 32 25;        /* #232019 */
+      --c-sunken: 15 14 11;      /* #0f0e0b */
+
+      --c-bark-100: 50 45 37;    /* hairline */
+      --c-bark-200: 69 63 53;    /* the heavier bottom rule */
+      --c-bark-300: 125 117 102; /* placeholder */
+      --c-bark-400: 164 154 134; /* eyebrows, captions */
+      --c-bark-500: 216 208 192; /* body */
+      --c-bark-700: 240 233 219; /* emphasis */
+      --c-bark-900: 246 242 234;
+
+      --c-ink: 246 242 234;      /* navy cannot carry a heading here */
+      --c-link: 143 200 90;      /* eucalypt-light, the footer link colour */
+      --c-link-hover: 182 221 131;
+      --c-action: 37 83 179;     /* scarf.blue.light — already in the config */
+      --c-action-hover: 26 59 127;
+      --c-action-edge: 14 36 80;
+      --c-outline: 246 242 234;
+      --c-outline-fg: 255 255 255;
+      --c-hero: 15 14 11;
+      --c-band: 0 79 57;
+      --c-footer: 25 23 64;
+      --c-eucalypt-light: 143 200 90;
+
+      --c-joey-deep: 224 138 78;
+      --c-cub-deep: 255 198 46;  /* #ffc62e reads fine as-is */
+      --c-scout-deep: 53 201 110;
+      --c-venturer-deep: 224 128 143;
+      --c-rover-deep: 232 122 119;
+
+      --c-info-surface: 18 49 44;
+      --c-success-surface: 18 45 26;
+      --c-warning-surface: 46 36 17;
+      --c-danger-surface: 51 26 23;
+      --c-note: 68 200 245;      /* nsw.cyan */
+
+      /* black-tinted on a dark ground; the hard offset stays */
+      --sh-xs: 0 1px 0 rgba(0, 0, 0, .4);
+      --sh-sm: 0 1px 0 rgba(0, 0, 0, .55), 0 1px 3px rgba(0, 0, 0, .4);
+      --sh-md: 0 2px 0 rgba(0, 0, 0, .55), 0 4px 10px rgba(0, 0, 0, .45);
+      --sh-lg: 0 3px 0 rgba(0, 0, 0, .6), 0 10px 22px rgba(0, 0, 0, .5);
+      --sh-xl: 0 4px 0 rgba(0, 0, 0, .65), 0 20px 40px rgba(0, 0, 0, .55);
+
+      --contour: url('/assets/img/contour-dark.svg');
+    }
+  }
+
   /* Nothing in this system sits on white. */
   body {
     @apply font-body bg-paper text-bark-500 leading-relaxed tracking-body;
@@ -23,12 +145,24 @@
 
 @layer components {
   /* The contour mark is a single centred composition, not a tile, so its
-     sizing is part of the class — never `bg-contour-*` on its own. */
+     sizing is part of the class — never `bg-contour-*` on its own.
+     `.contour-light` now follows the theme: light artwork on paper,
+     dark artwork once the ground goes dark. */
   .contour-light {
-    @apply bg-contour-light bg-cover bg-center bg-no-repeat;
+    background-image: var(--contour);
+    @apply bg-cover bg-center bg-no-repeat;
   }
   .contour-dark {
     @apply bg-contour-dark bg-cover bg-center bg-no-repeat;
+  }
+
+  /* Photography: dimmed slightly at night so it stops glaring off a dark
+     page. Applied by the `photo()` macro and the hero. */
+  .photo-dim {
+    @apply dark:brightness-[.86] dark:saturate-[.96];
+  }
+  .photo-dim-hero {
+    @apply dark:brightness-[.72] dark:saturate-[.95];
   }
 }
 
