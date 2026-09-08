@@ -11,15 +11,13 @@
     <meta name="color-scheme" content="light dark">
     <meta name="msapplication-TileColor" content="#8d8b12">
     {% if page.url %}<link rel="canonical" href="{{ urls.canonical_base_url }}{{ page.url }}">{% endif %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/core.css' | url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>{% if page_title %}{{ page_title }} | {% endif %}1st Blackheath Scout Group</title>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/assets/js/alpine.min.js" defer></script>
     {% if env.environment != "development" %}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="c62a7eb4-8fa5-44ac-b692-2fd1bf6dad6d"></script>
     {% endif %}

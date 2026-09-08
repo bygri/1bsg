@@ -15,6 +15,8 @@ module.exports = function(eleventyConfig) {
   }));
 
   eleventyConfig.addPassthroughCopy('assets/img');
+  eleventyConfig.addPassthroughCopy('assets/fonts');
+  eleventyConfig.addPassthroughCopy('assets/js');
   eleventyConfig.addPassthroughCopy('assets/files');
   eleventyConfig.addPassthroughCopy({'assets/root': '.'});
 

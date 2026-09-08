@@ -11,10 +11,10 @@
     "tailwindcss": "^3.4.17"
   },
   "scripts": {
-    "dev:11ty": "npx @11ty/eleventy --serve",
+    "dev:11ty": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
     "dev:tailwindcss": "npx tailwindcss -i assets/css/core.css -o dist/assets/css/core.css --watch",
     "dev": "concurrently \"npm:dev:*\"",
-    "build:11ty": "npx @11ty/eleventy",
+    "build:11ty": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "build:tailwindcss": "npx tailwindcss -i assets/css/core.css -o dist/assets/css/core.css",
     "build": "npm run build:11ty && npm run build:tailwindcss",
     "clean": "rm -rf dist"
